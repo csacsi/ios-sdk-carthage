@@ -120,7 +120,7 @@ const NSInteger PXLAlbumDefaultPerPage = 20;
         NSInteger nextPage = self.lastPageFetched == NSNotFound ? 1 : self.lastPageFetched + 1;
         // make sure we aren't already loading that page
         if (!self.loadingOperations[@(nextPage)]) {
-            NSString *requestString = [NSString stringWithFormat:PXLAlbumGETRequestString, self.identifier];
+            NSString *requestString = [NSString stringWithFormat:   , self.identifier];
             NSMutableDictionary *params = @{}.mutableCopy;
             if (self.sortOptions) {
                 params[@"sort"] = [self.sortOptions urlParamString];
