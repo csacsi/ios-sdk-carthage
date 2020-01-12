@@ -6,9 +6,9 @@
 //  Copyright © 2020. BitRaptors. All rights reserved.
 //
 
+import Alamofire
 import Foundation
 import MapKit
-import Alamofire
 
 enum PXLPhotoSize {
     case thumbnail
@@ -71,69 +71,72 @@ struct PXLPhoto {
         return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
     }
 
+    static func photoFromDTO(dto: PXLPhotoDTO, inAlbum: PXLAlbum?) -> PXLPhoto {
+        var photo = PXLPhoto(id: dto.id,
+                             photoTitle: dto.photoTitle ?? "",
+                             latitude: dto.latitude,
+                             longitude: dto.longitude,
+                             taggedAt: Date(timeIntervalSince1970: TimeInterval(dto.taggedAt)),
+                             emailAddress: dto.emailAddress,
+                             instagramFollowers: dto.instagramFollowers,
+                             twitterFollowers: dto.twitterFollowers,
+                             avatarUrl: dto.avatarURL != nil ? URL(string: dto.avatarURL!) : nil,
+                             username: dto.userName,
+                             connectedUserId: dto.connectedUserID,
+                             source: dto.source,
+                             contentType: dto.contentType,
+                             dataFileName: dto.dataFileName,
+                             mediumUrl: dto.mediumURL != nil ? URL(string: dto.mediumURL!) : nil,
+                             bigUrl: dto.bigURL != nil ? URL(string: dto.bigURL!) : nil,
+                             thumbnailUrl: dto.thumbnailURL != nil ? URL(string: dto.thumbnailURL!) : nil,
+                             sourceUrl: URL(string: dto.sourceURL),
+                             mediaId: dto.mediaID,
+                             existIn: dto.existIn,
+                             collectTerm: dto.collectTerm,
+                             albumPhotoId: dto.albumPhotoID,
+                             albumId: dto.albumID,
+                             likeCount: dto.likeCount,
+                             shareCount: dto.shareCount,
+                             actionLink: dto.actionLink != nil ? URL(string: dto.actionLink!) : nil,
+                             actionLinkText: dto.actionLinkText,
+                             actionLinkTitle: dto.actionLinkText,
+                             actionLinkPhoto: dto.actionLinkPhoto,
+                             updatedAt: Date(timeIntervalSince1970: TimeInterval(dto.updatedAt)),
+                             isStarred: dto.isStarred,
+                             approved: dto.approved,
+                             archived: dto.archived,
+                             isFlagged: dto.isFlagged,
+                             album: inAlbum,
+                             unreadCount: dto.unreadCount,
+                             albumActionLink: nil,
+                             title: dto.title,
+                             messaged: dto.messaged,
+                             hasPermission: dto.hasPermission,
+                             awaitingPermission: dto.awaitingPermission,
+                             instUserHasLiked: dto.socialUserHasLiked,
+                             platformLink: URL(string: dto.platformLink),
+                             products: [],
+                             cdnSmallUrl: URL(string: dto.pixleeCDNPhotos.smallURL),
+                             cdnMediumUrl: URL(string: dto.pixleeCDNPhotos.mediumURL),
+                             cdnLargeUrl: URL(string: dto.pixleeCDNPhotos.largeURL),
+                             cdnOriginalUrl: URL(string: dto.pixleeCDNPhotos.originalURL))
+
+        photo.products = dto.products.map({ (productDto) -> PXLProduct in
+            PXLProduct(identifier: productDto.id,
+                       photo: photo,
+                       linkText: productDto.linkText,
+                       link: URL(string: productDto.link),
+                       imageUrl: URL(string: productDto.image),
+                       title: productDto.title,
+                       sku: productDto.sku,
+                       productDescription: productDto.productDescription)
+        })
+        return photo
+    }
+
     static func photosFromArray(responseArray: [PXLPhotoDTO], inAlbum: PXLAlbum) -> [PXLPhoto] {
         return responseArray.compactMap { (dto) -> PXLPhoto? in
-
-            var photo = PXLPhoto(id: dto.id,
-                                 photoTitle: dto.photoTitle ?? "",
-                                 latitude: dto.latitude,
-                                 longitude: dto.longitude,
-                                 taggedAt: Date(timeIntervalSince1970: TimeInterval(dto.taggedAt)),
-                                 emailAddress: dto.emailAddress,
-                                 instagramFollowers: dto.instagramFollowers,
-                                 twitterFollowers: dto.twitterFollowers,
-                                 avatarUrl: dto.avatarURL != nil ? URL(string: dto.avatarURL!) : nil,
-                                 username: dto.userName,
-                                 connectedUserId: dto.connectedUserID,
-                                 source: dto.source,
-                                 contentType: dto.contentType,
-                                 dataFileName: dto.dataFileName,
-                                 mediumUrl: dto.mediumURL != nil ? URL(string: dto.mediumURL!) : nil,
-                                 bigUrl: dto.bigURL != nil ? URL(string: dto.bigURL!) : nil,
-                                 thumbnailUrl: dto.thumbnailURL != nil ? URL(string: dto.thumbnailURL!) : nil,
-                                 sourceUrl: URL(string: dto.sourceURL),
-                                 mediaId: dto.mediaID,
-                                 existIn: dto.existIn,
-                                 collectTerm: dto.collectTerm,
-                                 albumPhotoId: dto.albumPhotoID,
-                                 albumId: dto.albumID,
-                                 likeCount: dto.likeCount,
-                                 shareCount: dto.shareCount,
-                                 actionLink: dto.actionLink != nil ? URL(string: dto.actionLink!) : nil,
-                                 actionLinkText: dto.actionLinkText,
-                                 actionLinkTitle: dto.actionLinkText,
-                                 actionLinkPhoto: dto.actionLinkPhoto,
-                                 updatedAt: Date(timeIntervalSince1970: TimeInterval(dto.updatedAt)),
-                                 isStarred: dto.isStarred,
-                                 approved: dto.approved,
-                                 archived: dto.archived,
-                                 isFlagged: dto.isFlagged,
-                                 album: inAlbum,
-                                 unreadCount: dto.unreadCount,
-                                 albumActionLink: nil,
-                                 title: dto.title,
-                                 messaged: dto.messaged,
-                                 hasPermission: dto.hasPermission,
-                                 awaitingPermission: dto.awaitingPermission,
-                                 instUserHasLiked: dto.socialUserHasLiked,
-                                 platformLink: URL(string: dto.platformLink),
-                                 products: [],
-                                 cdnSmallUrl: URL(string: dto.pixleeCDNPhotos.smallURL),
-                                 cdnMediumUrl: URL(string: dto.pixleeCDNPhotos.mediumURL),
-                                 cdnLargeUrl: URL(string: dto.pixleeCDNPhotos.largeURL),
-                                 cdnOriginalUrl: URL(string: dto.pixleeCDNPhotos.originalURL))
-
-            photo.products = dto.products.map({ (productDto) -> PXLProduct in
-                PXLProduct(identifier: productDto.id,
-                           photo: photo,
-                           linkText: productDto.linkText,
-                           link: URL(string: productDto.link),
-                           imageUrl: URL(string: productDto.image),
-                           title: productDto.title,
-                           sku: productDto.sku,
-                           productDescription: productDto.productDescription)
-            })
-            return photo
+            PXLPhoto.photoFromDTO(dto: dto, inAlbum: inAlbum)
         }
     }
 
@@ -218,15 +221,18 @@ struct PXLPhoto {
         }
     }
 
-    static func getPhotoWithId(photoId: String, completionHandler: (PXLPhoto, Error) -> Void) {
-        AF.request(PXLClient.sharedClient.apiRequests.getPhotoWithId(id: photoId)).responseDecodable { (response: DataResponse<PXLAlbumNextPageResponse, AFError>) in
+    static func getPhotoWithId(photoId: String, completionHandler: ((PXLPhoto?, Error?) -> Void)?) -> DataRequest {
+        return AF.request(PXLClient.sharedClient.apiRequests.getPhotoWithId(id: photoId)).responseDecodable { (response: DataResponse<PXLPhotoResponseDTO, AFError>) in
 
             switch response.result {
             case let .success(responseDTO):
                 print("Response: \(responseDTO)")
-                
+                let photo = PXLPhoto.photoFromDTO(dto: responseDTO.data, inAlbum: nil)
+                completionHandler?(photo, nil)
+
             case let .failure(error):
                 print("Error: \(error)")
+                completionHandler?(nil, error)
             }
         }
     }

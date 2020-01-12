@@ -30,8 +30,10 @@
 		F2A0960823C9B9CF00071640 /* PXLAlbumNexPageResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A0960723C9B9CF00071640 /* PXLAlbumNexPageResponseDTO.swift */; };
 		F2A0960A23CB64EC00071640 /* PXLPhotoResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A0960923CB64EC00071640 /* PXLPhotoResponseDTO.swift */; };
 		F2A0960C23CB656B00071640 /* PXLProductDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A0960B23CB656B00071640 /* PXLProductDTO.swift */; };
-		F2A0961123CB787400071640 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A0960F23CB787400071640 /* ImageCell.swift */; };
-		F2A0961223CB787400071640 /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2A0961023CB787400071640 /* ImageCell.xib */; };
+		F2F8337323CB86BE0072641B /* ImageDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F8337123CB86BE0072641B /* ImageDetailsViewController.swift */; };
+		F2F8337423CB86BE0072641B /* ImageDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2F8337223CB86BE0072641B /* ImageDetailsViewController.xib */; };
+		F2F8337823CB8F750072641B /* PXLImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F8337623CB8F750072641B /* PXLImageCell.swift */; };
+		F2F8337923CB8F750072641B /* PXLImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2F8337723CB8F750072641B /* PXLImageCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,8 +89,10 @@
 		F2A0960723C9B9CF00071640 /* PXLAlbumNexPageResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PXLAlbumNexPageResponseDTO.swift; sourceTree = "<group>"; };
 		F2A0960923CB64EC00071640 /* PXLPhotoResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PXLPhotoResponseDTO.swift; sourceTree = "<group>"; };
 		F2A0960B23CB656B00071640 /* PXLProductDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PXLProductDTO.swift; sourceTree = "<group>"; };
-		F2A0960F23CB787400071640 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
-		F2A0961023CB787400071640 /* ImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = "<group>"; };
+		F2F8337123CB86BE0072641B /* ImageDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailsViewController.swift; sourceTree = "<group>"; };
+		F2F8337223CB86BE0072641B /* ImageDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageDetailsViewController.xib; sourceTree = "<group>"; };
+		F2F8337623CB8F750072641B /* PXLImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PXLImageCell.swift; path = Example/Cells/PXLImageCell.swift; sourceTree = SOURCE_ROOT; };
+		F2F8337723CB8F750072641B /* PXLImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = PXLImageCell.xib; path = Example/Cells/PXLImageCell.xib; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +175,7 @@
 				F24D42F423C65BBE0091E324 /* AppDelegate.swift */,
 				F24D42F623C65BBE0091E324 /* SceneDelegate.swift */,
 				F24D42F823C65BBE0091E324 /* ViewController.swift */,
+				F2F8337523CB86C30072641B /* ImageDetails */,
 				F2A0960E23CB784500071640 /* Cells */,
 				F24D42FA23C65BBE0091E324 /* Main.storyboard */,
 				F24D42FD23C65BBF0091E324 /* Assets.xcassets */,
@@ -252,10 +257,19 @@
 		F2A0960E23CB784500071640 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				F2A0960F23CB787400071640 /* ImageCell.swift */,
-				F2A0961023CB787400071640 /* ImageCell.xib */,
+				F2F8337623CB8F750072641B /* PXLImageCell.swift */,
+				F2F8337723CB8F750072641B /* PXLImageCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		F2F8337523CB86C30072641B /* ImageDetails */ = {
+			isa = PBXGroup;
+			children = (
+				F2F8337123CB86BE0072641B /* ImageDetailsViewController.swift */,
+				F2F8337223CB86BE0072641B /* ImageDetailsViewController.xib */,
+			);
+			path = ImageDetails;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -368,9 +382,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F24D430123C65BBF0091E324 /* LaunchScreen.storyboard in Resources */,
+				F2F8337923CB8F750072641B /* PXLImageCell.xib in Resources */,
 				F24D42FE23C65BBF0091E324 /* Assets.xcassets in Resources */,
 				F24D433123C65C1D0091E324 /* ImageAssets.xcassets in Resources */,
-				F2A0961223CB787400071640 /* ImageCell.xib in Resources */,
+				F2F8337423CB86BE0072641B /* ImageDetailsViewController.xib in Resources */,
 				F24D42FC23C65BBE0091E324 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -500,11 +515,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F24D433323C65C1D0091E324 /* PXLAlbumFilterOptions.swift in Sources */,
+				F2F8337823CB8F750072641B /* PXLImageCell.swift in Sources */,
 				F24D433523C65C1D0091E324 /* PXLAlbum.swift in Sources */,
 				F24D433823C65C1D0091E324 /* SwiftCrypto.swift in Sources */,
 				F24D433223C65C1D0091E324 /* PXLProduct.swift in Sources */,
 				F2A0960C23CB656B00071640 /* PXLProductDTO.swift in Sources */,
 				F2A0960823C9B9CF00071640 /* PXLAlbumNexPageResponseDTO.swift in Sources */,
+				F2F8337323CB86BE0072641B /* ImageDetailsViewController.swift in Sources */,
 				F24D42F923C65BBE0091E324 /* ViewController.swift in Sources */,
 				F2A0960A23CB64EC00071640 /* PXLPhotoResponseDTO.swift in Sources */,
 				F24D433923C65C1D0091E324 /* PXLClient.swift in Sources */,
@@ -513,7 +530,6 @@
 				F24D42F523C65BBE0091E324 /* AppDelegate.swift in Sources */,
 				F24D433723C65C1D0091E324 /* PXLApiRequests.swift in Sources */,
 				F24D42F723C65BBE0091E324 /* SceneDelegate.swift in Sources */,
-				F2A0961123CB787400071640 /* ImageCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

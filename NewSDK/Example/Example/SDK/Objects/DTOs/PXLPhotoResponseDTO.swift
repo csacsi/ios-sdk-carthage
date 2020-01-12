@@ -10,11 +10,10 @@ import Foundation
 
 struct PXLPhotoResponseDTO: Codable {
     let data: PXLPhotoDTO
-    let message: String
-    let status: Int
+    let status: String
 
     enum CodingKeys: String, CodingKey {
-        case data, message, status
+        case data, status
     }
 }
 
@@ -44,15 +43,18 @@ struct PXLPhotoDTO: Codable {
     let albumID, unreadCount: Int
 //    let collectMethod: CollectMethod
     let title: String
-    let messaged, hasPermission, awaitingPermission, socialUserHasLiked: Bool
+    let messaged: Bool?
+    let hasPermission, awaitingPermission, socialUserHasLiked: Bool
     let platformLink: String
     let customOrder: JSONNull?
     let hasHeavyPermission, awaitingHeavyPermission: Bool
     let permissionedAt: Int?
     let heavyPermissionedAt, permissionedByUserID: JSONNull?
     let locality, country: String?
-    let isScheduled: Bool
-    let scheduler, engagementRate, notes: JSONNull?
+    let isScheduled: Bool?
+    let scheduler: String?
+    let engagementRate: Double?
+    let notes: JSONNull?
 //    let flagReasons: FlagReasons
     let markedAsSpam: Bool
 //    let uploaderAdditionalFields: [:]
@@ -63,7 +65,7 @@ struct PXLPhotoDTO: Codable {
     let mentions: [String]?
     let nativeLikes, nativeComments, nativeRetweets, nativeFavorites: Int
     let nativeShares, nativeFollowers: Int
-    let language:String?
+    let language: String?
     let deletedAt: Int?
 //    let videoSettings: [:]
     let connectedUserSocialID: String

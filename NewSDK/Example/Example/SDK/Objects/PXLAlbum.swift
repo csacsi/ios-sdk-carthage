@@ -103,11 +103,12 @@ class PXLAlbum {
                         }
                         self.hasNextPage = responseDTO.next
 
-                        self.photos.append(contentsOf: PXLPhoto.photosFromArray(responseArray: responseDTO.data, inAlbum: self))
+                        let newPhotos = PXLPhoto.photosFromArray(responseArray: responseDTO.data, inAlbum: self)
+                        self.photos.append(contentsOf: newPhotos)
 
                         self.loadingOperations[nextPage] = nil
                         print("Page\(nextPage) loaded allPhotos: \(self.photos.count)")
-                        completionHandler?(self.photos, nil)
+                        completionHandler?(newPhotos, nil)
                     case let .failure(error):
                         print("Error: \(error)")
                         completionHandler?(nil, error)
