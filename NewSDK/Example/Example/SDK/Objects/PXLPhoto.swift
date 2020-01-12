@@ -191,11 +191,11 @@ struct PXLPhoto {
     func photoUrl(for size: PXLPhotoSize) -> URL? {
         switch size {
         case .thumbnail:
-            return thumbnailUrl
+            return cdnSmallUrl
         case .medium:
-            return mediumUrl
+            return cdnMediumUrl
         case .big:
-            return bigUrl
+            return cdnLargeUrl
         }
     }
 
