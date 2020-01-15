@@ -55,6 +55,10 @@ class PXLAlbumViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupCollectionView()
+    }
+
+    func setupCollectionView() {
         let viewWidth = UIScreen.main.bounds.width
         let cellWidth = Int((viewWidth - (3 * defaultMargin)) / 2)
 

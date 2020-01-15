@@ -10,7 +10,6 @@ import Nuke
 import UIKit
 
 class ImageDetailsViewController: UIViewController {
-    let dateFormatter = DateFormatter()
 
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!
@@ -33,7 +32,7 @@ class ImageDetailsViewController: UIViewController {
             usernameLabel.text = viewModel.username
 
             if let updatedAt = viewModel.updatedAt {
-                dateLabel.text = dateFormatter.string(from: updatedAt)
+                dateLabel.text = updatedAt.getElapsedInterval()
             } else {
                 dateLabel.text = ""
             }
@@ -46,7 +45,6 @@ class ImageDetailsViewController: UIViewController {
         super.viewDidLoad()
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneButtonPressed))
         setupCollectionView()
-        dateFormatter.dateStyle = .long
     }
 
     func setupCollectionView() {
