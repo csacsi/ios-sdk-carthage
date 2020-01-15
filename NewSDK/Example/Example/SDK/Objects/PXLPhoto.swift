@@ -18,7 +18,7 @@ enum PXLPhotoSize {
 
 struct PXLPhoto {
     let id: Int
-    let photoTitle: String
+    let photoTitle: String?
     let latitude: Double?
     let longitude: Double?
     let taggedAt: Date?
@@ -27,9 +27,9 @@ struct PXLPhoto {
     let twitterFollowers: Int?
     let avatarUrl: URL?
     let username: String
-    let connectedUserId: Int?
-    let source: String?
-    let contentType: String?
+    let connectedUserId: Int
+    let source: String
+    let contentType: String
     let dataFileName: String?
     let mediumUrl: URL?
     let bigUrl: URL?
@@ -39,7 +39,7 @@ struct PXLPhoto {
     let existIn: Int?
     let collectTerm: String?
     let albumPhotoId: Int
-    let albumId: Int?
+    let albumId: Int
     let likeCount: Int?
     let shareCount: Int?
     let actionLink: URL?
@@ -48,7 +48,7 @@ struct PXLPhoto {
     let actionLinkPhoto: String?
     let updatedAt: Date?
     let isStarred: Bool?
-    let approved: Bool?
+    let approved: Bool
     let archived: Bool?
     let isFlagged: Bool?
     let album: PXLAlbum?
@@ -60,7 +60,7 @@ struct PXLPhoto {
     let awaitingPermission: Bool?
     let instUserHasLiked: Bool?
     let platformLink: URL?
-    var products: [PXLProduct]?
+    let products: [PXLProduct]?
     let cdnSmallUrl: URL?
     let cdnMediumUrl: URL?
     let cdnLargeUrl: URL?
@@ -69,6 +69,57 @@ struct PXLPhoto {
     var coordinate: CLLocationCoordinate2D? {
         guard let latitude = self.latitude, let longitude = self.longitude else { return nil }
         return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+    }
+
+    public func setProducts(newProducts: [PXLProduct]) -> PXLPhoto {
+        return PXLPhoto(id: id,
+                        photoTitle: photoTitle,
+                        latitude: latitude,
+                        longitude: longitude,
+                        taggedAt: taggedAt,
+                        emailAddress: emailAddress,
+                        instagramFollowers: instagramFollowers,
+                        twitterFollowers: twitterFollowers,
+                        avatarUrl: avatarUrl,
+                        username: username,
+                        connectedUserId: connectedUserId,
+                        source: source,
+                        contentType: contentType,
+                        dataFileName: dataFileName,
+                        mediumUrl: mediumUrl,
+                        bigUrl: bigUrl,
+                        thumbnailUrl: thumbnailUrl,
+                        sourceUrl: sourceUrl,
+                        mediaId: mediaId,
+                        existIn: existIn,
+                        collectTerm: collectTerm,
+                        albumPhotoId: albumPhotoId,
+                        albumId: albumId,
+                        likeCount: likeCount,
+                        shareCount: shareCount,
+                        actionLink: actionLink,
+                        actionLinkText: actionLinkText,
+                        actionLinkTitle: actionLinkTitle,
+                        actionLinkPhoto: actionLinkPhoto,
+                        updatedAt: updatedAt,
+                        isStarred: isStarred,
+                        approved: approved,
+                        archived: archived,
+                        isFlagged: isFlagged,
+                        album: album,
+                        unreadCount: unreadCount,
+                        albumActionLink: albumActionLink,
+                        title: title,
+                        messaged: messaged,
+                        hasPermission: hasPermission,
+                        awaitingPermission: awaitingPermission,
+                        instUserHasLiked: instUserHasLiked,
+                        platformLink: platformLink,
+                        products: newProducts,
+                        cdnSmallUrl: cdnSmallUrl,
+                        cdnMediumUrl: cdnMediumUrl,
+                        cdnLargeUrl: cdnLargeUrl,
+                        cdnOriginalUrl: cdnOriginalUrl)
     }
 
     static func photoFromDTO(dto: PXLPhotoDTO, inAlbum: PXLAlbum?) -> PXLPhoto {
@@ -115,13 +166,13 @@ struct PXLPhoto {
                              awaitingPermission: dto.awaitingPermission,
                              instUserHasLiked: dto.socialUserHasLiked,
                              platformLink: URL(string: dto.platformLink),
-                             products: [],
+                             products: nil,
                              cdnSmallUrl: URL(string: dto.pixleeCDNPhotos.smallURL),
                              cdnMediumUrl: URL(string: dto.pixleeCDNPhotos.mediumURL),
                              cdnLargeUrl: URL(string: dto.pixleeCDNPhotos.largeURL),
                              cdnOriginalUrl: URL(string: dto.pixleeCDNPhotos.originalURL))
 
-        photo.products = dto.products.map({ (productDto) -> PXLProduct in
+        let products = dto.products.map({ (productDto) -> PXLProduct in
             PXLProduct(identifier: productDto.id,
                        photo: photo,
                        linkText: productDto.linkText,
@@ -131,64 +182,13 @@ struct PXLPhoto {
                        sku: productDto.sku,
                        productDescription: productDto.productDescription)
         })
-        return photo
+        return photo.setProducts(newProducts: products)
     }
 
     static func photosFromArray(responseArray: [PXLPhotoDTO], inAlbum: PXLAlbum) -> [PXLPhoto] {
         return responseArray.compactMap { (dto) -> PXLPhoto? in
             PXLPhoto.photoFromDTO(dto: dto, inAlbum: inAlbum)
         }
-    }
-
-    static func placeholderPhoto() -> PXLPhoto {
-        return PXLPhoto(id: -1,
-                        photoTitle: "",
-                        latitude: nil,
-                        longitude: nil,
-                        taggedAt: nil,
-                        emailAddress: nil,
-                        instagramFollowers: nil,
-                        twitterFollowers: nil,
-                        avatarUrl: nil,
-                        username: "",
-                        connectedUserId: nil,
-                        source: nil,
-                        contentType: nil,
-                        dataFileName: nil,
-                        mediumUrl: nil,
-                        bigUrl: nil,
-                        thumbnailUrl: nil,
-                        sourceUrl: nil,
-                        mediaId: nil,
-                        existIn: nil,
-                        collectTerm: nil,
-                        albumPhotoId: -1,
-                        albumId: nil,
-                        likeCount: nil,
-                        shareCount: nil,
-                        actionLink: nil,
-                        actionLinkText: nil,
-                        actionLinkTitle: nil,
-                        actionLinkPhoto: nil,
-                        updatedAt: nil,
-                        isStarred: nil,
-                        approved: nil,
-                        archived: nil,
-                        isFlagged: nil,
-                        album: nil,
-                        unreadCount: nil,
-                        albumActionLink: nil,
-                        title: nil,
-                        messaged: nil,
-                        hasPermission: nil,
-                        awaitingPermission: nil,
-                        instUserHasLiked: nil,
-                        platformLink: nil,
-                        products: nil,
-                        cdnSmallUrl: nil,
-                        cdnMediumUrl: nil,
-                        cdnLargeUrl: nil,
-                        cdnOriginalUrl: nil)
     }
 
     func photoUrl(for size: PXLPhotoSize) -> URL? {

@@ -46,6 +46,7 @@ class ViewController: UIViewController {
 
         listLayout.itemSize = CGSize(width: viewWidth, height: viewWidth)
 
+        
         collectionView.setCollectionViewLayout(layoutToUse, animated: false)
 
         collectionView.delegate = self

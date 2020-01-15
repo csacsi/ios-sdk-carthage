@@ -41,7 +41,7 @@ struct PXLPhotoDTO: Codable {
     let updatedAt: Int
     let isStarred, approved, archived, isFlagged: Bool
     let albumID, unreadCount: Int
-//    let collectMethod: CollectMethod
+    let collectMethod: String?
     let title: String
     let messaged: Bool?
     let hasPermission, awaitingPermission, socialUserHasLiked: Bool
@@ -55,9 +55,8 @@ struct PXLPhotoDTO: Codable {
     let scheduler: String?
     let engagementRate: Double?
     let notes: JSONNull?
-//    let flagReasons: FlagReasons
     let markedAsSpam: Bool
-//    let uploaderAdditionalFields: [:]
+    let uploaderAdditionalFields: PXLUploaderAdditionalFields
     let isInfluencer: Bool
     let submitterLink, altText: String
     let boundingBoxProducts: [BoundingBoxProduct]
@@ -67,12 +66,11 @@ struct PXLPhotoDTO: Codable {
     let nativeShares, nativeFollowers: Int
     let language: String?
     let deletedAt: Int?
-//    let videoSettings: [:]
     let connectedUserSocialID: String
     let subtype: JSONNull?
     let narrowDistrict: String?
     let createdAt, approvedOnDate: Int
-    let taggedUsernames: [JSONAny]
+    let taggedUsernames: [String]
     let resized: Bool?
     let pageID: String
     let products: [PXLProductDTO]
@@ -112,7 +110,7 @@ struct PXLPhotoDTO: Codable {
         case isFlagged = "is_flagged"
         case albumID = "album_id"
         case unreadCount = "unread_count"
-//        case collectMethod = "collect_method"
+        case collectMethod = "collect_method"
         case title, messaged
         case hasPermission = "has_permission"
         case awaitingPermission = "awaiting_permission"
@@ -129,9 +127,8 @@ struct PXLPhotoDTO: Codable {
         case scheduler
         case engagementRate = "engagement_rate"
         case notes
-//        case flagReasons = "flag_reasons"
         case markedAsSpam = "marked_as_spam"
-//        case uploaderAdditionalFields = "uploader_additional_fields"
+        case uploaderAdditionalFields = "uploader_additional_fields"
         case isInfluencer = "is_influencer"
         case submitterLink = "submitter_link"
         case altText = "alt_text"
@@ -146,7 +143,6 @@ struct PXLPhotoDTO: Codable {
         case nativeFollowers = "native_followers"
         case language
         case deletedAt = "deleted_at"
-//        case videoSettings = "video_settings"
         case connectedUserSocialID = "connected_user_social_id"
         case subtype
         case narrowDistrict = "narrow_district"
@@ -160,9 +156,12 @@ struct PXLPhotoDTO: Codable {
     }
 }
 
-// MARK: - FlagReasons
+// MARK: - PXLUploaderAdditionalInfos
 
-struct FlagReasons: Codable {
+struct PXLUploaderAdditionalFields: Codable {
+    let height: String?
+    let submissions: Int?
+    let name: String?
 }
 
 // MARK: - PixleeCDNPhotos

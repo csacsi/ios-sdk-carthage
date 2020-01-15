@@ -20,8 +20,8 @@ struct PXLProductDTO: Codable {
     let price: Double
     let stock: Int
     let currency: String?
-    let category: [JSONAny]?
-    let extraUrls: FlagReasons
+    let category: [Int]?
+    let extraUrls: JSONAny?
     let customCtaPhoto: String
     let linkValid: Bool?
     let totalReviews, averageRating, datcOverride: JSONNull?

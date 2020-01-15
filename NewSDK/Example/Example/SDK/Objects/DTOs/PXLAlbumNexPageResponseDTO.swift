@@ -8,6 +8,7 @@
 import Foundation
 
 // MARK: - PXLAlbumNextPageResponse
+
 struct PXLAlbumNextPageResponse: Codable {
     let accountID, albumID, page, perPage: Int
     let total: Int
@@ -39,26 +40,38 @@ struct BoundingBoxProduct: Codable {
     }
 }
 
-enum CollectMethod: String, Codable {
-    case captionHashtag = "caption_hashtag"
-    case commentHashtag = "comment_hashtag"
-    case uploadFromAPI = "upload_from_api"
-}
-
-
-
-
-
 // MARK: - ReviewsInfo
 
 struct PXLReviewsInfo: Codable {
     let numReviews, averageRating: Int
-    let reviews: [JSONAny]
+    let reviews: [PXLReview]
 
     enum CodingKeys: String, CodingKey {
         case numReviews = "num_reviews"
         case averageRating = "average_rating"
         case reviews
+    }
+}
+
+struct PXLReview: Codable {
+    let id: Int
+    let title: String
+    let content: String
+    let score: Int
+    let votesUp: Int
+    let votesDown: Int
+    let verifiedBuyer: Bool
+    let userName: String
+
+    enum CodingKeys: String, CodingKey {
+        case id
+        case title
+        case content
+        case score
+        case votesUp = "votes_up"
+        case votesDown = "votes_down"
+        case verifiedBuyer = "verified_buyer"
+        case userName = "user_name"
     }
 }
 
