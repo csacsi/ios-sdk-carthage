@@ -13,8 +13,6 @@ class PXLImageCell: UICollectionViewCell {
     static let defaultIdentifier = "ImageCell"
 
     @IBOutlet var imageView: UIImageView!
-    @IBOutlet var titleLabel: UILabel!
-    @IBOutlet var otherLabel: UILabel!
 
     var viewModel: PXLPhoto? {
         didSet {
@@ -24,8 +22,6 @@ class PXLImageCell: UICollectionViewCell {
             if let imageUrl = viewModel.photoUrl(for: .medium) {
                 Nuke.loadImage(with: imageUrl, into: imageView)
             }
-            titleLabel.text = viewModel.title
-            otherLabel.text = viewModel.actionLinkText
         }
     }
 

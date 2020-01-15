@@ -27,6 +27,8 @@
 		F24D433723C65C1D0091E324 /* PXLApiRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24D432D23C65C1D0091E324 /* PXLApiRequests.swift */; };
 		F24D433823C65C1D0091E324 /* SwiftCrypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24D432F23C65C1D0091E324 /* SwiftCrypto.swift */; };
 		F24D433923C65C1D0091E324 /* PXLClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24D433023C65C1D0091E324 /* PXLClient.swift */; };
+		F25A2BD223CF952500D0D6D2 /* PXLProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25A2BD023CF952500D0D6D2 /* PXLProductCell.swift */; };
+		F25A2BD323CF952500D0D6D2 /* PXLProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F25A2BD123CF952500D0D6D2 /* PXLProductCell.xib */; };
 		F285904423CF1291002B68D2 /* PXLPhotoConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F285904323CF1291002B68D2 /* PXLPhotoConverter.swift */; };
 		F285904723CF137D002B68D2 /* PXLProductConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F285904623CF137D002B68D2 /* PXLProductConverter.swift */; };
 		F2A0960823C9B9CF00071640 /* PXLAlbumNexPageResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A0960723C9B9CF00071640 /* PXLAlbumNexPageResponseDTO.swift */; };
@@ -88,6 +90,8 @@
 		F24D432D23C65C1D0091E324 /* PXLApiRequests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PXLApiRequests.swift; sourceTree = "<group>"; };
 		F24D432F23C65C1D0091E324 /* SwiftCrypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftCrypto.swift; sourceTree = "<group>"; };
 		F24D433023C65C1D0091E324 /* PXLClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PXLClient.swift; sourceTree = "<group>"; };
+		F25A2BD023CF952500D0D6D2 /* PXLProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PXLProductCell.swift; sourceTree = "<group>"; };
+		F25A2BD123CF952500D0D6D2 /* PXLProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PXLProductCell.xib; sourceTree = "<group>"; };
 		F285904323CF1291002B68D2 /* PXLPhotoConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PXLPhotoConverter.swift; sourceTree = "<group>"; };
 		F285904623CF137D002B68D2 /* PXLProductConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PXLProductConverter.swift; sourceTree = "<group>"; };
 		F2A0960723C9B9CF00071640 /* PXLAlbumNexPageResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PXLAlbumNexPageResponseDTO.swift; sourceTree = "<group>"; };
@@ -273,6 +277,8 @@
 			children = (
 				F2F8337623CB8F750072641B /* PXLImageCell.swift */,
 				F2F8337723CB8F750072641B /* PXLImageCell.xib */,
+				F25A2BD023CF952500D0D6D2 /* PXLProductCell.swift */,
+				F25A2BD123CF952500D0D6D2 /* PXLProductCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -400,6 +406,7 @@
 				F24D42FE23C65BBF0091E324 /* Assets.xcassets in Resources */,
 				F24D433123C65C1D0091E324 /* ImageAssets.xcassets in Resources */,
 				F2F8337423CB86BE0072641B /* ImageDetailsViewController.xib in Resources */,
+				F25A2BD323CF952500D0D6D2 /* PXLProductCell.xib in Resources */,
 				F24D42FC23C65BBE0091E324 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -536,6 +543,7 @@
 				F2A0960C23CB656B00071640 /* PXLProductDTO.swift in Sources */,
 				F2A0960823C9B9CF00071640 /* PXLAlbumNexPageResponseDTO.swift in Sources */,
 				F2F8337323CB86BE0072641B /* ImageDetailsViewController.swift in Sources */,
+				F25A2BD223CF952500D0D6D2 /* PXLProductCell.swift in Sources */,
 				F24D42F923C65BBE0091E324 /* ViewController.swift in Sources */,
 				F2A0960A23CB64EC00071640 /* PXLPhotoResponseDTO.swift in Sources */,
 				F24D433923C65C1D0091E324 /* PXLClient.swift in Sources */,

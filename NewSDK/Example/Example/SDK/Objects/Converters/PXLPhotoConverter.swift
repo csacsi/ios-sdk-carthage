@@ -75,6 +75,7 @@ class PXLPhotoConverter {
         let products = dto.products.map({ (productDto) -> PXLProduct in
             productConverter.convertProductDTOtoProduct(dto: productDto, photo: photo)
         })
+    
         return photo.setProducts(newProducts: products)
     }
 }

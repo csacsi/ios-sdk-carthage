@@ -9,7 +9,8 @@
 import Foundation
 
 class PXLProductConverter {
-    func convertProductDTOtoProduct(dto: PXLProductDTO, photo: PXLPhoto) -> PXLProduct {
+    func convertProductDTOtoProduct(dto: PXLProductDTO, photo: PXLPhoto) ->
+        PXLProduct {
         return PXLProduct(identifier: dto.id,
                           photo: photo,
                           linkText: dto.linkText,

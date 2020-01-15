@@ -68,8 +68,6 @@ class ViewController: UIViewController {
             print("New Photo: \(photo)")
         }
 
-//        let albumWithIdentifier = PXLAlbum.albumWithIdentifier(identifier: "4515393")
-//        let albumWithSKU = PXLAlbum.albumWithSku(sku: 300152)
         _ = PXLClient.sharedClient.loadNextPageOfPhotosForAlbum(album: album) { _, error in
             guard error == nil else {
                 print("There was an error during the loading \(String(describing: error))")
