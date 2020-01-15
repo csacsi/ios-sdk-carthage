@@ -27,6 +27,8 @@
 		F24D433723C65C1D0091E324 /* PXLApiRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24D432D23C65C1D0091E324 /* PXLApiRequests.swift */; };
 		F24D433823C65C1D0091E324 /* SwiftCrypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24D432F23C65C1D0091E324 /* SwiftCrypto.swift */; };
 		F24D433923C65C1D0091E324 /* PXLClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24D433023C65C1D0091E324 /* PXLClient.swift */; };
+		F285904423CF1291002B68D2 /* PXLPhotoConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F285904323CF1291002B68D2 /* PXLPhotoConverter.swift */; };
+		F285904723CF137D002B68D2 /* PXLProductConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F285904623CF137D002B68D2 /* PXLProductConverter.swift */; };
 		F2A0960823C9B9CF00071640 /* PXLAlbumNexPageResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A0960723C9B9CF00071640 /* PXLAlbumNexPageResponseDTO.swift */; };
 		F2A0960A23CB64EC00071640 /* PXLPhotoResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A0960923CB64EC00071640 /* PXLPhotoResponseDTO.swift */; };
 		F2A0960C23CB656B00071640 /* PXLProductDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A0960B23CB656B00071640 /* PXLProductDTO.swift */; };
@@ -86,6 +88,8 @@
 		F24D432D23C65C1D0091E324 /* PXLApiRequests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PXLApiRequests.swift; sourceTree = "<group>"; };
 		F24D432F23C65C1D0091E324 /* SwiftCrypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftCrypto.swift; sourceTree = "<group>"; };
 		F24D433023C65C1D0091E324 /* PXLClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PXLClient.swift; sourceTree = "<group>"; };
+		F285904323CF1291002B68D2 /* PXLPhotoConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PXLPhotoConverter.swift; sourceTree = "<group>"; };
+		F285904623CF137D002B68D2 /* PXLProductConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PXLProductConverter.swift; sourceTree = "<group>"; };
 		F2A0960723C9B9CF00071640 /* PXLAlbumNexPageResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PXLAlbumNexPageResponseDTO.swift; sourceTree = "<group>"; };
 		F2A0960923CB64EC00071640 /* PXLPhotoResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PXLPhotoResponseDTO.swift; sourceTree = "<group>"; };
 		F2A0960B23CB656B00071640 /* PXLProductDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PXLProductDTO.swift; sourceTree = "<group>"; };
@@ -229,6 +233,7 @@
 				F24D432B23C65C1D0091E324 /* PXLAlbum.swift */,
 				F2A0960D23CB659A00071640 /* DTOs */,
 				F24D432C23C65C1D0091E324 /* PXLAlbumSortOptions.swift */,
+				F285904523CF1367002B68D2 /* Converters */,
 				F24D432D23C65C1D0091E324 /* PXLApiRequests.swift */,
 				F24D433023C65C1D0091E324 /* PXLClient.swift */,
 				F24D432E23C65C1D0091E324 /* Helpers */,
@@ -242,6 +247,15 @@
 				F24D432F23C65C1D0091E324 /* SwiftCrypto.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		F285904523CF1367002B68D2 /* Converters */ = {
+			isa = PBXGroup;
+			children = (
+				F285904323CF1291002B68D2 /* PXLPhotoConverter.swift */,
+				F285904623CF137D002B68D2 /* PXLProductConverter.swift */,
+			);
+			path = Converters;
 			sourceTree = "<group>";
 		};
 		F2A0960D23CB659A00071640 /* DTOs */ = {
@@ -530,6 +544,8 @@
 				F24D42F523C65BBE0091E324 /* AppDelegate.swift in Sources */,
 				F24D433723C65C1D0091E324 /* PXLApiRequests.swift in Sources */,
 				F24D42F723C65BBE0091E324 /* SceneDelegate.swift in Sources */,
+				F285904423CF1291002B68D2 /* PXLPhotoConverter.swift in Sources */,
+				F285904723CF137D002B68D2 /* PXLProductConverter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

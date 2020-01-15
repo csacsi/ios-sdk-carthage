@@ -21,8 +21,7 @@ class ViewController: UIViewController {
 
     let album = PXLAlbum.albumWithIdentifier(identifier: "4515393")
 
-    var albumDisplayMode = PXLAlbumViewControllerDisplayDisplayMode.grid
-    {
+    var albumDisplayMode = PXLAlbumViewControllerDisplayDisplayMode.grid {
         didSet {
             collectionView.setCollectionViewLayout(layoutToUse, animated: false)
         }
@@ -46,7 +45,6 @@ class ViewController: UIViewController {
 
         listLayout.itemSize = CGSize(width: viewWidth, height: viewWidth)
 
-        
         collectionView.setCollectionViewLayout(layoutToUse, animated: false)
 
         collectionView.delegate = self
@@ -58,7 +56,7 @@ class ViewController: UIViewController {
 //        #warning Replace with your Secret Key if you are making POST requests.
         PXLClient.sharedClient.secretKey = "secret"
 
-        _ = PXLPhoto.getPhotoWithId(photoId: "299469263") { newPhoto, error in
+        _ = PXLClient.sharedClient.getPhotoWithId(photoId: "299469263") { newPhoto, error in
             guard error == nil else {
                 print("Error during load of image with Id \(String(describing: error))")
                 return
@@ -72,7 +70,7 @@ class ViewController: UIViewController {
 
 //        let albumWithIdentifier = PXLAlbum.albumWithIdentifier(identifier: "4515393")
 //        let albumWithSKU = PXLAlbum.albumWithSku(sku: 300152)
-        _ = album.loadNextPageOfPhotos { _, error in
+        _ = PXLClient.sharedClient.loadNextPageOfPhotosForAlbum(album: album) { _, error in
             guard error == nil else {
                 print("There was an error during the loading \(String(describing: error))")
                 return
@@ -110,7 +108,7 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
         if scrollView == collectionView {
             let offset = scrollView.contentOffset.y + scrollView.frame.height
             if offset > scrollView.contentSize.height * 0.7 {
-                _ = album.loadNextPageOfPhotos { photos, error in
+                _ = PXLClient.sharedClient.loadNextPageOfPhotosForAlbum(album: album) { photos, error in
                     guard error == nil else {
                         print("Error while loading images:\(String(describing: error))")
                         return

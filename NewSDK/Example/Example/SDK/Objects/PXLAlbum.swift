@@ -33,8 +33,6 @@ class PXLAlbum {
         }
     }
 
-    private var loadingOperations: [Int: DataRequest?]
-
     static let PXLAlbumDefaultPerPage: Int = 20
 
     convenience init(identifier: String) {
@@ -61,7 +59,6 @@ class PXLAlbum {
         self.lastPageFetched = NSNotFound
         self.hasNextPage = true
         self.photos = []
-        self.loadingOperations = [:]
     }
 
     static func albumWithIdentifier(identifier: String) -> PXLAlbum {
@@ -76,53 +73,7 @@ class PXLAlbum {
         photos = []
         lastPageFetched = NSNotFound
         hasNextPage = true
-        loadingOperations = [:]
     }
 
-    func loadNextPageOfPhotos(completionHandler: (([PXLPhoto]?, Error?) -> Void)?) -> DataRequest? {
-        if hasNextPage {
-            let nextPage = lastPageFetched == NSNotFound ? 1 : lastPageFetched + 1
-            if loadingOperations[nextPage] == nil {
-                print("Loading page \(nextPage)")
-                var req: URLRequest
-                if identifier != nil {
-                    req = PXLClient.sharedClient.apiRequests.loadNextAlbumPage(album: self)
-                } else if sku != nil {
-                    req = PXLClient.sharedClient.apiRequests.loadNextAlbumPageWithSKU(album: self)
-                } else {
-                    completionHandler?(nil, nil)
-                    return nil
-                }
-
-                let request = AF.request(req).responseDecodable { (response: DataResponse<PXLAlbumNextPageResponse, AFError>) in
-
-                    switch response.result {
-                    case let .success(responseDTO):
-                        if self.lastPageFetched == NSNotFound || responseDTO.page > self.lastPageFetched {
-                            self.lastPageFetched = responseDTO.page
-                        }
-                        self.hasNextPage = responseDTO.next
-
-                        let newPhotos = PXLPhoto.photosFromArray(responseArray: responseDTO.data, inAlbum: self)
-                        self.photos.append(contentsOf: newPhotos)
-
-                        self.loadingOperations[nextPage] = nil
-                        print("Page\(nextPage) loaded allPhotos: \(self.photos.count)")
-                        completionHandler?(newPhotos, nil)
-                    case let .failure(error):
-                        print("Error: \(error)")
-                        completionHandler?(nil, error)
-                    }
-                }
-                loadingOperations[nextPage] = request
-                return request
-            } else {
-                completionHandler?(nil, nil)
-                return nil
-            }
-        } else {
-            completionHandler?(nil, nil)
-            return nil
-        }
-    }
+    
 }
