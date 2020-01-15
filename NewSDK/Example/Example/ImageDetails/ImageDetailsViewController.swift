@@ -45,8 +45,8 @@ class ImageDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneButtonPressed))
-
         setupCollectionView()
+        dateFormatter.dateStyle = .long
     }
 
     func setupCollectionView() {

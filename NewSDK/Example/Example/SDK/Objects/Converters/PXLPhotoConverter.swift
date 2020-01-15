@@ -9,9 +9,8 @@
 import Foundation
 
 class PXLPhotoConverter {
-    
     let productConverter: PXLProductConverter
-    
+
     init(productConverter: PXLProductConverter) {
         self.productConverter = productConverter
     }
@@ -27,7 +26,7 @@ class PXLPhotoConverter {
                              photoTitle: dto.photoTitle ?? "",
                              latitude: dto.latitude,
                              longitude: dto.longitude,
-                             taggedAt: Date(timeIntervalSince1970: TimeInterval(dto.taggedAt)),
+                             taggedAt: Date(timeIntervalSince1970: TimeInterval(dto.taggedAt/1000)),
                              emailAddress: dto.emailAddress,
                              instagramFollowers: dto.instagramFollowers,
                              twitterFollowers: dto.twitterFollowers,
@@ -52,7 +51,7 @@ class PXLPhotoConverter {
                              actionLinkText: dto.actionLinkText,
                              actionLinkTitle: dto.actionLinkText,
                              actionLinkPhoto: dto.actionLinkPhoto,
-                             updatedAt: Date(timeIntervalSince1970: TimeInterval(dto.updatedAt)),
+                             updatedAt: Date(timeIntervalSince1970: TimeInterval(dto.updatedAt/1000)),
                              isStarred: dto.isStarred,
                              approved: dto.approved,
                              archived: dto.archived,
@@ -75,7 +74,7 @@ class PXLPhotoConverter {
         let products = dto.products.map({ (productDto) -> PXLProduct in
             productConverter.convertProductDTOtoProduct(dto: productDto, photo: photo)
         })
-    
+
         return photo.setProducts(newProducts: products)
     }
 }

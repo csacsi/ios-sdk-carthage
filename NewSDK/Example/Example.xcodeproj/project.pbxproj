@@ -10,6 +10,8 @@
 		2146AA63DEA854F748B84E2A /* Pods_ExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8DF01205A5126F0A0E4D097 /* Pods_ExampleTests.framework */; };
 		94C0640BECA3DF31E9641762 /* Pods_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 642CA3B960C93EE246734429 /* Pods_Example.framework */; };
 		D8055AF6EAC69FBAD1A5E855 /* Pods_Example_ExampleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 696F3B826D6EC765702835B7 /* Pods_Example_ExampleUITests.framework */; };
+		F228094323CFA56A00B1E77C /* PXLAlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F228094123CFA56A00B1E77C /* PXLAlbumViewController.swift */; };
+		F228094423CFA56A00B1E77C /* PXLAlbumViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F228094223CFA56A00B1E77C /* PXLAlbumViewController.xib */; };
 		F24D42F523C65BBE0091E324 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24D42F423C65BBE0091E324 /* AppDelegate.swift */; };
 		F24D42F723C65BBE0091E324 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24D42F623C65BBE0091E324 /* SceneDelegate.swift */; };
 		F24D42F923C65BBE0091E324 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24D42F823C65BBE0091E324 /* ViewController.swift */; };
@@ -67,6 +69,8 @@
 		A014A7C4C477C418F331B7C8 /* Pods-Example-ExampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example-ExampleUITests.debug.xcconfig"; path = "Target Support Files/Pods-Example-ExampleUITests/Pods-Example-ExampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D8DF01205A5126F0A0E4D097 /* Pods_ExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCAC9142E4ADF433F94D5960 /* Pods-Example-ExampleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example-ExampleUITests.release.xcconfig"; path = "Target Support Files/Pods-Example-ExampleUITests/Pods-Example-ExampleUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F228094123CFA56A00B1E77C /* PXLAlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PXLAlbumViewController.swift; sourceTree = "<group>"; };
+		F228094223CFA56A00B1E77C /* PXLAlbumViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PXLAlbumViewController.xib; sourceTree = "<group>"; };
 		F24D42F123C65BBE0091E324 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F24D42F423C65BBE0091E324 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F24D42F623C65BBE0091E324 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -154,6 +158,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		F228094523CFA56F00B1E77C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F228094123CFA56A00B1E77C /* PXLAlbumViewController.swift */,
+				F228094223CFA56A00B1E77C /* PXLAlbumViewController.xib */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		F24D42E823C65BBE0091E324 = {
 			isa = PBXGroup;
 			children = (
@@ -183,6 +196,7 @@
 				F24D42F423C65BBE0091E324 /* AppDelegate.swift */,
 				F24D42F623C65BBE0091E324 /* SceneDelegate.swift */,
 				F24D42F823C65BBE0091E324 /* ViewController.swift */,
+				F228094523CFA56F00B1E77C /* ViewControllers */,
 				F2F8337523CB86C30072641B /* ImageDetails */,
 				F2A0960E23CB784500071640 /* Cells */,
 				F24D42FA23C65BBE0091E324 /* Main.storyboard */,
@@ -408,6 +422,7 @@
 				F2F8337423CB86BE0072641B /* ImageDetailsViewController.xib in Resources */,
 				F25A2BD323CF952500D0D6D2 /* PXLProductCell.xib in Resources */,
 				F24D42FC23C65BBE0091E324 /* Main.storyboard in Resources */,
+				F228094423CFA56A00B1E77C /* PXLAlbumViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -546,6 +561,7 @@
 				F25A2BD223CF952500D0D6D2 /* PXLProductCell.swift in Sources */,
 				F24D42F923C65BBE0091E324 /* ViewController.swift in Sources */,
 				F2A0960A23CB64EC00071640 /* PXLPhotoResponseDTO.swift in Sources */,
+				F228094323CFA56A00B1E77C /* PXLAlbumViewController.swift in Sources */,
 				F24D433923C65C1D0091E324 /* PXLClient.swift in Sources */,
 				F24D433423C65C1D0091E324 /* PXLPhoto.swift in Sources */,
 				F24D433623C65C1D0091E324 /* PXLAlbumSortOptions.swift in Sources */,
