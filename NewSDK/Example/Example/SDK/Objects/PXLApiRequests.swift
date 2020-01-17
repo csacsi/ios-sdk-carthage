@@ -111,8 +111,8 @@ class PXLApiRequests {
         }
     }
 
-    func getPhotoWithId(id: String) -> URLRequest {
-        let url = baseURL + "media/\(id)"
+    func getPhotoWithPhotoAlbumId(_ photoAlbumId: String) -> URLRequest {
+        let url = baseURL + "media/\(photoAlbumId)"
         do {
             let params = defaultGetParameters()
             let request = try PXLApiRequests.urlRequest(.get, url, parameters: params)

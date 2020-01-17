@@ -29,13 +29,12 @@ class PXLClient {
         }
     }
 
-    func getPhotoWithId(photoId: String, completionHandler: ((PXLPhoto?, Error?) -> Void)?) -> DataRequest {
-        return AF.request(apiRequests.getPhotoWithId(id: photoId)).responseDecodable { (response: DataResponse<PXLPhotoResponseDTO, AFError>) in
+    func getPhotoWithPhotoAlbumId(photoAlbumId: String, completionHandler: ((PXLPhoto?, Error?) -> Void)?) -> DataRequest {
+        return AF.request(apiRequests.getPhotoWithPhotoAlbumId(photoAlbumId)).responseDecodable { (response: DataResponse<PXLPhotoResponseDTO, AFError>) in
 
             switch response.result {
             case let .success(responseDTO):
-                print("Response: \(responseDTO)")
-                let photo = self.photoConverter.convertPhotoDTOToPhoto(dto: responseDTO.data, inAlbum: nil)
+                let photo = self.photoConverter.convertPhotoDTOToPhoto(dto: responseDTO.data)
                 completionHandler?(photo, nil)
 
             case let .failure(error):
@@ -118,7 +117,7 @@ class PXLClient {
             }
             album.hasNextPage = responseDTO.next
 
-            let newPhotos = photoConverter.convertPhotoDTOsToPhotos(photoDtos: responseDTO.data, inAlbum: album)
+            let newPhotos = photoConverter.convertPhotoDTOsToPhotos(photoDtos: responseDTO.data)
             album.photos.append(contentsOf: newPhotos)
 
             return (newPhotos, nil)

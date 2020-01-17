@@ -257,11 +257,11 @@
 			isa = PBXGroup;
 			children = (
 				F24D432823C65C1D0091E324 /* PXLProduct.swift */,
+				F24D432C23C65C1D0091E324 /* PXLAlbumSortOptions.swift */,
 				F24D432923C65C1D0091E324 /* PXLAlbumFilterOptions.swift */,
 				F24D432A23C65C1D0091E324 /* PXLPhoto.swift */,
 				F24D432B23C65C1D0091E324 /* PXLAlbum.swift */,
 				F2A0960D23CB659A00071640 /* DTOs */,
-				F24D432C23C65C1D0091E324 /* PXLAlbumSortOptions.swift */,
 				F285904523CF1367002B68D2 /* Converters */,
 				F24D432D23C65C1D0091E324 /* PXLApiRequests.swift */,
 				F24D433023C65C1D0091E324 /* PXLClient.swift */,

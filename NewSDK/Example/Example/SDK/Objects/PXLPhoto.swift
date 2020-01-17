@@ -51,7 +51,6 @@ struct PXLPhoto {
     let approved: Bool
     let archived: Bool?
     let isFlagged: Bool?
-    let album: PXLAlbum?
     let unreadCount: Int?
     let albumActionLink: URL?
     let title: String?
@@ -69,57 +68,6 @@ struct PXLPhoto {
     var coordinate: CLLocationCoordinate2D? {
         guard let latitude = self.latitude, let longitude = self.longitude else { return nil }
         return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-    }
-
-    public func setProducts(newProducts: [PXLProduct]) -> PXLPhoto {
-        return PXLPhoto(id: id,
-                        photoTitle: photoTitle,
-                        latitude: latitude,
-                        longitude: longitude,
-                        taggedAt: taggedAt,
-                        emailAddress: emailAddress,
-                        instagramFollowers: instagramFollowers,
-                        twitterFollowers: twitterFollowers,
-                        avatarUrl: avatarUrl,
-                        username: username,
-                        connectedUserId: connectedUserId,
-                        source: source,
-                        contentType: contentType,
-                        dataFileName: dataFileName,
-                        mediumUrl: mediumUrl,
-                        bigUrl: bigUrl,
-                        thumbnailUrl: thumbnailUrl,
-                        sourceUrl: sourceUrl,
-                        mediaId: mediaId,
-                        existIn: existIn,
-                        collectTerm: collectTerm,
-                        albumPhotoId: albumPhotoId,
-                        albumId: albumId,
-                        likeCount: likeCount,
-                        shareCount: shareCount,
-                        actionLink: actionLink,
-                        actionLinkText: actionLinkText,
-                        actionLinkTitle: actionLinkTitle,
-                        actionLinkPhoto: actionLinkPhoto,
-                        updatedAt: updatedAt,
-                        isStarred: isStarred,
-                        approved: approved,
-                        archived: archived,
-                        isFlagged: isFlagged,
-                        album: album,
-                        unreadCount: unreadCount,
-                        albumActionLink: albumActionLink,
-                        title: title,
-                        messaged: messaged,
-                        hasPermission: hasPermission,
-                        awaitingPermission: awaitingPermission,
-                        instUserHasLiked: instUserHasLiked,
-                        platformLink: platformLink,
-                        products: newProducts,
-                        cdnSmallUrl: cdnSmallUrl,
-                        cdnMediumUrl: cdnMediumUrl,
-                        cdnLargeUrl: cdnLargeUrl,
-                        cdnOriginalUrl: cdnOriginalUrl)
     }
 
     func photoUrl(for size: PXLPhotoSize) -> URL? {

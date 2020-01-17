@@ -20,7 +20,7 @@ class ViewController: UIViewController {
         PXLClient.sharedClient.secretKey = "secret"
 
         // Get one photo example
-        _ = PXLClient.sharedClient.getPhotoWithId(photoId: "299469263") { newPhoto, error in
+        _ = PXLClient.sharedClient.getPhotoWithPhotoAlbumId(photoAlbumId: "299469263") { newPhoto, error in
             guard error == nil else {
                 print("Error during load of image with Id \(String(describing: error))")
                 return
