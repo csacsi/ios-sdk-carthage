@@ -12,7 +12,7 @@ import Foundation
 class PXLClient {
     static var sharedClient = PXLClient()
 
-    let apiRequests = PXLApiRequests()
+    private let apiRequests = PXLApiRequests()
 
     private let photoConverter = PXLPhotoConverter(productConverter: PXLProductConverter())
     private var loadingOperations: [String: [Int: DataRequest?]] = [:]
@@ -112,7 +112,6 @@ class PXLClient {
     func handleAlbumResponse(_ response: DataResponse<PXLAlbumNextPageResponse, AFError>, album: PXLAlbum) -> (newPhotos: [PXLPhoto]?, error: AFError?) {
         switch response.result {
         case let .success(responseDTO):
-            var lastPageFetched = album.lastPageFetched
             if album.lastPageFetched == NSNotFound || responseDTO.page > album.lastPageFetched {
                 album.lastPageFetched = responseDTO.page
             }
@@ -126,6 +125,17 @@ class PXLClient {
         case let .failure(error):
             print("Error: \(error)")
             return (nil, error)
+        }
+    }
+
+    func logAnalyticsEvent(event: PXLAnalyticsEvent, completionHandler: @escaping (Error?) -> Void) -> DataRequest {
+        return AF.request(apiRequests.postLogAnalyticsEvent(event)).responseJSON { result in
+            if let error = result.error {
+                print("Error: \(error)")
+                completionHandler(error)
+            } else {
+                completionHandler(nil)
+            }
         }
     }
 }
