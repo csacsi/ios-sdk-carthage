@@ -23,3 +23,7 @@ class PXLAnalyitcsService {
         return client.logAnalyticsEvent(event: event, completionHandler: completionHandler)
     }
 }
+
+struct PXLAnalyitcsError: Error {
+    let reason: String
+}

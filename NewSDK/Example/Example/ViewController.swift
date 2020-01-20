@@ -30,6 +30,16 @@ class ViewController: UIViewController {
                 return
             }
             print("New Photo: \(photo)")
+            PXLAnalyitcsService.sharedAnalyitcs.logEvent(event: PXLAnalyticsEventOpenedLightBox(photo: photo)) { error in
+                if let error = error {
+                    print("🛑 Error during analyitcs call:\(error)")
+                }
+            }
+            PXLAnalyitcsService.sharedAnalyitcs.logEvent(event: PXLAnalyticsEventActionClicked(photo: photo, actionLink: "Linkecske")) { (error) in
+                if let error = error {
+                    print("🛑 Error during analyitcs call:\(error)")
+                }
+            }
         }
     }
 

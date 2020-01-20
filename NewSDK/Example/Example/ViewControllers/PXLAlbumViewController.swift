@@ -47,6 +47,8 @@ class PXLAlbumViewController: UIViewController {
                 }
                 self.collectionView.reloadData()
             }
+
+            viewModel.openedWidget("widgetke")
         }
     }
 
@@ -104,6 +106,7 @@ extension PXLAlbumViewController: UICollectionViewDataSource, UICollectionViewDe
             let offset = scrollView.contentOffset.y + scrollView.frame.height
             if offset > scrollView.contentSize.height * 0.7 {
                 if let viewModel = viewModel {
+                    viewModel.loadMore()
                     _ = PXLClient.sharedClient.loadNextPageOfPhotosForAlbum(album: viewModel.album) { photos, error in
                         guard error == nil else {
                             print("Error while loading images:\(String(describing: error))")

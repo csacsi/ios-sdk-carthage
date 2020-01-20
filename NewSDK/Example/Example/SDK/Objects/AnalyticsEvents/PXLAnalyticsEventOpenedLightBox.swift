@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct PXLAnalyitcsEventOpenedLightBox: PXLAnalyticsEvent {
+struct PXLAnalyticsEventOpenedLightBox: PXLAnalyticsEvent {
     let photo: PXLPhoto
 
     var eventName = "openedLightbox"

@@ -129,12 +129,21 @@ class PXLClient {
     }
 
     func logAnalyticsEvent(event: PXLAnalyticsEvent, completionHandler: @escaping (Error?) -> Void) -> DataRequest {
-        return AF.request(apiRequests.postLogAnalyticsEvent(event)).responseJSON { result in
-            if let error = result.error {
-                print("Error: \(error)")
+        return AF.request(apiRequests.postLogAnalyticsEvent(event)).responseJSON { response in
+            switch response.result {
+            case let .success(json):
+                if let jsonDict = json as? [String: Any], let status = jsonDict["status"] as? String, status == "OK" {
+                    completionHandler(nil)
+                } else if let jsonDict = json as? [String: Any], let error = jsonDict["error"] as? String {
+                    completionHandler(PXLAnalyitcsError(reason: error))
+                } else {
+                    completionHandler(PXLAnalyitcsError(reason: "Invalid response"))
+                }
+                break
+            case let .failure(error):
+                print("error: \(error)")
                 completionHandler(error)
-            } else {
-                completionHandler(nil)
+                break
             }
         }
     }

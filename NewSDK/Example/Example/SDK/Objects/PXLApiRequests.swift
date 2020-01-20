@@ -125,8 +125,13 @@ class PXLApiRequests {
 
     func postLogAnalyticsEvent(_ event: PXLAnalyticsEvent) -> URLRequest {
         let url = analyitcsBaseURL + event.eventName
+        
         do {
-            let params = event.logParameters
+            var params = event.logParameters
+            if let apiKey = apiKey {
+                params["API_KEY"] = apiKey
+            }
+            
             let postHeaders = self.postHeaders(headers: [:], parameters: params)
             let request = try PXLApiRequests.urlRequest(.post, url, parameters: params, encoding: JSONEncoding.default, headers: postHeaders)
             return request

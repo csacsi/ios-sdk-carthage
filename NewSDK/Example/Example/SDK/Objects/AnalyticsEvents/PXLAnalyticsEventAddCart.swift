@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct PXLAnalyitcsEventAddCart: PXLAnalyticsEvent {
+struct PXLAnalyticsEventAddCart: PXLAnalyticsEvent {
     let sku: String
     let quantity: Int
     let price: String
