@@ -36,17 +36,21 @@ class PXLAlbumViewController: UIViewController {
         albumDisplayMode = layoutSwitcher.selectedSegmentIndex == 0 ? .list : .grid
     }
 
-    var viewModel: PXLAlbum? {
+    var viewModel: PXLAlbumViewModel? {
         didSet {
             guard let viewModel = viewModel else { return }
-            _ = self.view
+            _ = view
+        }
+    }
 
-            _ = PXLClient.sharedClient.loadNextPageOfPhotosForAlbum(album: viewModel) { _, error in
+    func reloadAlbum() {
+        if let viewModel = viewModel {
+            _ = PXLClient.sharedClient.loadNextPageOfPhotosForAlbum(album: viewModel.album) { album, _, error in
                 guard error == nil else {
                     print("There was an error during the loading \(String(describing: error))")
                     return
                 }
-
+                self.viewModel = PXLAlbumViewModel(album: album)
                 self.collectionView.reloadData()
             }
         }
@@ -56,6 +60,7 @@ class PXLAlbumViewController: UIViewController {
         super.viewDidLoad()
 
         setupCollectionView()
+        self.reloadAlbum()
     }
 
     func setupCollectionView() {
@@ -80,13 +85,13 @@ class PXLAlbumViewController: UIViewController {
 
 extension PXLAlbumViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel?.photos.count ?? 0
+        return viewModel?.album.photos.count ?? 0
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PXLImageCell.defaultIdentifier, for: indexPath) as! PXLImageCell
 
-        cell.viewModel = viewModel?.photos[indexPath.row]
+        cell.viewModel = viewModel?.album.photos[indexPath.row]
 
         return cell
     }
@@ -95,7 +100,7 @@ extension PXLAlbumViewController: UICollectionViewDataSource, UICollectionViewDe
         let imageDetailsVC = ImageDetailsViewController(nibName: "ImageDetailsViewController", bundle: nil)
         let navController = UINavigationController(rootViewController: imageDetailsVC)
 
-        imageDetailsVC.viewModel = viewModel?.photos[indexPath.row]
+        imageDetailsVC.viewModel = viewModel?.album.photos[indexPath.row]
 
         present(navController, animated: true) {
         }
@@ -105,8 +110,8 @@ extension PXLAlbumViewController: UICollectionViewDataSource, UICollectionViewDe
         if scrollView == collectionView {
             let offset = scrollView.contentOffset.y + scrollView.frame.height
             if offset > scrollView.contentSize.height * 0.7 {
-                if let viewModel = viewModel {
-                    _ = PXLClient.sharedClient.loadNextPageOfPhotosForAlbum(album: viewModel) { photos, error in
+                if var viewModel = viewModel {
+                    _ = PXLClient.sharedClient.loadNextPageOfPhotosForAlbum(album: viewModel.album) { album, photos, error in
                         guard error == nil else {
                             print("Error while loading images:\(String(describing: error))")
                             return
@@ -125,7 +130,8 @@ extension PXLAlbumViewController: UICollectionViewDataSource, UICollectionViewDe
                             let itemNumber = firstIndex + index
                             indexPaths.append(IndexPath(item: itemNumber, section: 0))
                         }
-
+                        
+                        self.viewModel = PXLAlbumViewModel(album: album)
                         self.collectionView.insertItems(at: indexPaths)
                     }
                 }

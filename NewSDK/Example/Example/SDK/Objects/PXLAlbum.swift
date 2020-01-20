@@ -10,70 +10,93 @@ import Alamofire
 import Foundation
 
 class PXLAlbum {
-    var identifier: String?
-    var sku: Int?
-    var perPage: Int {
-        didSet {
-            clearPhotosAndPages()
-        }
-    }
-
-    var photos: [PXLPhoto]
-    var lastPageFetched: Int
-    var hasNextPage: Bool
-    var sortOptions: PXLAlbumSortOptions? {
-        didSet {
-            clearPhotosAndPages()
-        }
-    }
-
-    var filterOptions: PXLAblumFilterOptions? {
-        didSet {
-            clearPhotosAndPages()
-        }
-    }
-
     static let PXLAlbumDefaultPerPage: Int = 20
 
-    convenience init(identifier: String) {
-        self.init(perPage: PXLAlbum.PXLAlbumDefaultPerPage,
-                  lastPageFetched: NSNotFound,
-                  hasNextPage: true,
-                  photos: [],
-                  loadingOperations: [:])
+    let identifier: String?
+    let sku: Int?
+    let perPage: Int
+    let photos: [PXLPhoto]
+    let lastPageFetched: Int
+    let hasNextPage: Bool
+    let sortOptions: PXLAlbumSortOptions?
+    let filterOptions: PXLAlbumFilterOptions?
 
+    init(identifier: String? = nil, sku: Int? = nil, perPage: Int = PXLAlbum.PXLAlbumDefaultPerPage, photos: [PXLPhoto] = [PXLPhoto](), lastPageFetched: Int = 0, hasNextPage: Bool = true, sortOptions: PXLAlbumSortOptions? = nil, filterOptions: PXLAlbumFilterOptions? = nil) {
         self.identifier = identifier
-    }
-
-    convenience init(sku: Int) {
-        self.init(perPage: PXLAlbum.PXLAlbumDefaultPerPage,
-                  lastPageFetched: NSNotFound,
-                  hasNextPage: true,
-                  photos: [],
-                  loadingOperations: [:])
         self.sku = sku
+        self.perPage = perPage
+        self.photos = photos
+        self.lastPageFetched = lastPageFetched
+        self.hasNextPage = hasNextPage
+        self.sortOptions = sortOptions
+        self.filterOptions = filterOptions
     }
 
-    init(perPage: Int, lastPageFetched: Int, hasNextPage: Bool, photos: [PXLPhoto], loadingOperations: [Int: String]) {
-        self.perPage = PXLAlbum.PXLAlbumDefaultPerPage
-        self.lastPageFetched = NSNotFound
-        self.hasNextPage = true
-        self.photos = []
+    func changeIdentifier(newIdentifier: String) -> PXLAlbum {
+        return PXLAlbum(identifier: newIdentifier,
+                        sku: sku,
+                        perPage: PXLAlbum.PXLAlbumDefaultPerPage,
+                        photos: [],
+                        lastPageFetched: 0,
+                        hasNextPage: true,
+                        sortOptions: sortOptions,
+                        filterOptions: filterOptions)
     }
 
-    static func albumWithIdentifier(identifier: String) -> PXLAlbum {
-        return PXLAlbum(identifier: identifier)
+    func changeSKU(newSKU: Int) -> PXLAlbum {
+        return PXLAlbum(identifier: identifier,
+                        sku: newSKU,
+                        perPage: PXLAlbum.PXLAlbumDefaultPerPage,
+                        photos: [],
+                        lastPageFetched: NSNotFound,
+                        hasNextPage: true,
+                        sortOptions: sortOptions,
+                        filterOptions: filterOptions)
     }
 
-    static func albumWithSku(sku: Int) -> PXLAlbum {
-        return PXLAlbum(sku: sku)
+    func handleNewPhotos(newPhotos: [PXLPhoto], newLastPageFetched: Int, newHasNextPage: Bool) -> PXLAlbum {
+        var mutatedPhotos = photos
+        mutatedPhotos.append(contentsOf: newPhotos)
+        return PXLAlbum(identifier: identifier,
+                        sku: sku,
+                        perPage: perPage,
+                        photos: mutatedPhotos,
+                        lastPageFetched: newLastPageFetched,
+                        hasNextPage: newHasNextPage,
+                        sortOptions: sortOptions,
+                        filterOptions: filterOptions)
     }
 
-    func clearPhotosAndPages() {
-        photos = []
-        lastPageFetched = NSNotFound
-        hasNextPage = true
+    func changeSortOptions(newSortOptions: PXLAlbumSortOptions) -> PXLAlbum {
+        return PXLAlbum(identifier: identifier,
+                        sku: sku,
+                        perPage: perPage,
+                        photos: [],
+                        lastPageFetched: NSNotFound,
+                        hasNextPage: true,
+                        sortOptions: newSortOptions,
+                        filterOptions: filterOptions)
     }
 
-    
+    func changeFilterOptions(newFilterOptions: PXLAlbumFilterOptions) -> PXLAlbum {
+        return PXLAlbum(identifier: identifier,
+                        sku: sku,
+                        perPage: perPage,
+                        photos: [],
+                        lastPageFetched: NSNotFound,
+                        hasNextPage: true,
+                        sortOptions: sortOptions,
+                        filterOptions: newFilterOptions)
+    }
+
+    func changePerPage(newPerPage: Int) -> PXLAlbum {
+        return PXLAlbum(identifier: identifier,
+                        sku: sku,
+                        perPage: newPerPage,
+                        photos: [],
+                        lastPageFetched: NSNotFound,
+                        hasNextPage: true,
+                        sortOptions: sortOptions,
+                        filterOptions: filterOptions)
+    }
 }

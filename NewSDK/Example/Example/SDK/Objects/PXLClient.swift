@@ -44,7 +44,7 @@ class PXLClient {
         }
     }
 
-    func loadNextPageOfPhotosForAlbum(album: PXLAlbum, completionHandler: (([PXLPhoto]?, Error?) -> Void)?) -> DataRequest? {
+    func loadNextPageOfPhotosForAlbum(album: PXLAlbum, completionHandler: ((PXLAlbum, [PXLPhoto]?, Error?) -> Void)?) -> DataRequest? {
         if album.hasNextPage {
             let nextPage = album.lastPageFetched == NSNotFound ? 1 : album.lastPageFetched + 1
             if let identifier = album.identifier {
@@ -56,21 +56,21 @@ class PXLClient {
                     print("Loading page \(nextPage)")
                     let request = AF.request(apiRequests.loadNextAlbumPage(album: album)).responseDecodable { (response: DataResponse<PXLAlbumNextPageResponse, AFError>) in
 
-                        let (photos, error) = self.handleAlbumResponse(response, album: album)
+                        let (newAlbum, photos, error) = self.handleAlbumResponse(response, album: album)
 
-                        if let photos = photos {
-                            print("Page\(nextPage) loaded allPhotos: \(album.photos.count)")
-                            completionHandler?(photos, nil)
-                        } else if let error = error {
+                        if let photos = photos, let newAlbum = newAlbum, let completionHandler = completionHandler {
+                            print("Page\(nextPage) loaded allPhotos: \(newAlbum.photos.count)")
+                            completionHandler(newAlbum, photos, nil)
+                        } else if let error = error, let completionHandler = completionHandler {
                             print("Error: \(error)")
-                            completionHandler?(nil, error)
+                            completionHandler(album, nil, error)
                         }
                     }
                     requestsForAlbum[nextPage] = request
                     loadingOperations[identifier] = requestsForAlbum
                     return request
                 } else {
-                    completionHandler?(nil, nil)
+                    completionHandler?(album, nil, nil)
                     return nil
                 }
             } else if let sku = album.identifier {
@@ -82,48 +82,49 @@ class PXLClient {
                     print("Loading page \(nextPage)")
                     let request = AF.request(apiRequests.loadNextAlbumPageWithSKU(album: album)).responseDecodable { (response: DataResponse<PXLAlbumNextPageResponse, AFError>) in
 
-                        let (photos, error) = self.handleAlbumResponse(response, album: album)
+                        let (newAlbum, photos, error) = self.handleAlbumResponse(response, album: album)
 
-                        if let photos = photos {
-                            print("Page\(nextPage) loaded allPhotos: \(album.photos.count)")
-                            completionHandler?(photos, nil)
-                        } else if let error = error {
+                        if let photos = photos, let newAlbum = newAlbum, let completionHandler = completionHandler {
+                            print("Page\(nextPage) loaded allPhotos: \(newAlbum.photos.count)")
+                            completionHandler(newAlbum, photos, nil)
+                        } else if let error = error, let completionHandler = completionHandler {
                             print("Error: \(error)")
-                            completionHandler?(nil, error)
+                            completionHandler(album, nil, error)
                         }
                     }
                     requestsForAlbum[nextPage] = request
                     loadingOperations[sku] = requestsForAlbum
                     return request
                 } else {
-                    completionHandler?(nil, nil)
+                    completionHandler?(album, nil, nil)
                     return nil
                 }
             } else {
-                completionHandler?(nil, nil)
+                completionHandler?(album, nil, nil)
                 return nil
             }
         } else {
-            completionHandler?(nil, nil)
+            completionHandler?(album, nil, nil)
             return nil
         }
     }
 
-    func handleAlbumResponse(_ response: DataResponse<PXLAlbumNextPageResponse, AFError>, album: PXLAlbum) -> (photos: [PXLPhoto]?, error: AFError?) {
+    func handleAlbumResponse(_ response: DataResponse<PXLAlbumNextPageResponse, AFError>, album: PXLAlbum) -> (album: PXLAlbum?, newPhotos: [PXLPhoto]?, error: AFError?) {
         switch response.result {
         case let .success(responseDTO):
+            var lastPageFetched = album.lastPageFetched
             if album.lastPageFetched == NSNotFound || responseDTO.page > album.lastPageFetched {
-                album.lastPageFetched = responseDTO.page
+                lastPageFetched = responseDTO.page
             }
-            album.hasNextPage = responseDTO.next
 
             let newPhotos = photoConverter.convertPhotoDTOsToPhotos(photoDtos: responseDTO.data)
-            album.photos.append(contentsOf: newPhotos)
 
-            return (newPhotos, nil)
+            let updatedAlbum = album.handleNewPhotos(newPhotos: newPhotos, newLastPageFetched: lastPageFetched, newHasNextPage: responseDTO.next)
+
+            return (updatedAlbum, newPhotos, nil)
         case let .failure(error):
             print("Error: \(error)")
-            return (nil, error)
+            return (nil, nil, error)
         }
     }
 }

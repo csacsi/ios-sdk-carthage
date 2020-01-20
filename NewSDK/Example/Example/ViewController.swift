@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-    let album = PXLAlbum.albumWithIdentifier(identifier: "4515393")
+    let album = PXLAlbum(identifier: "4515393")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +35,7 @@ class ViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         let albumVC = PXLAlbumViewController(nibName: "PXLAlbumViewController", bundle: nil)
-        albumVC.viewModel = album
+        albumVC.viewModel = PXLAlbumViewModel(album: album)
         showViewController(VC: albumVC)
     }
 

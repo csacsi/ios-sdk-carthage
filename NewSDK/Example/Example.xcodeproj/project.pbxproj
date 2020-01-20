@@ -32,6 +32,7 @@
 		F24D433923C65C1D0091E324 /* PXLClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24D433023C65C1D0091E324 /* PXLClient.swift */; };
 		F25A2BD223CF952500D0D6D2 /* PXLProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25A2BD023CF952500D0D6D2 /* PXLProductCell.swift */; };
 		F25A2BD323CF952500D0D6D2 /* PXLProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F25A2BD123CF952500D0D6D2 /* PXLProductCell.xib */; };
+		F272622323D1C6D7000EB947 /* PXLAlbumViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F272622223D1C6D7000EB947 /* PXLAlbumViewModel.swift */; };
 		F285904423CF1291002B68D2 /* PXLPhotoConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F285904323CF1291002B68D2 /* PXLPhotoConverter.swift */; };
 		F285904723CF137D002B68D2 /* PXLProductConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F285904623CF137D002B68D2 /* PXLProductConverter.swift */; };
 		F2A0960823C9B9CF00071640 /* PXLAlbumNexPageResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A0960723C9B9CF00071640 /* PXLAlbumNexPageResponseDTO.swift */; };
@@ -98,6 +99,7 @@
 		F24D433023C65C1D0091E324 /* PXLClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PXLClient.swift; sourceTree = "<group>"; };
 		F25A2BD023CF952500D0D6D2 /* PXLProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PXLProductCell.swift; sourceTree = "<group>"; };
 		F25A2BD123CF952500D0D6D2 /* PXLProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PXLProductCell.xib; sourceTree = "<group>"; };
+		F272622223D1C6D7000EB947 /* PXLAlbumViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PXLAlbumViewModel.swift; sourceTree = "<group>"; };
 		F285904323CF1291002B68D2 /* PXLPhotoConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PXLPhotoConverter.swift; sourceTree = "<group>"; };
 		F285904623CF137D002B68D2 /* PXLProductConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PXLProductConverter.swift; sourceTree = "<group>"; };
 		F2A0960723C9B9CF00071640 /* PXLAlbumNexPageResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PXLAlbumNexPageResponseDTO.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 		F228094523CFA56F00B1E77C /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				F272622223D1C6D7000EB947 /* PXLAlbumViewModel.swift */,
 				F228094123CFA56A00B1E77C /* PXLAlbumViewController.swift */,
 				F228094223CFA56A00B1E77C /* PXLAlbumViewController.xib */,
 			);
@@ -580,6 +583,7 @@
 				F24D42F523C65BBE0091E324 /* AppDelegate.swift in Sources */,
 				F24D433723C65C1D0091E324 /* PXLApiRequests.swift in Sources */,
 				F24D42F723C65BBE0091E324 /* SceneDelegate.swift in Sources */,
+				F272622323D1C6D7000EB947 /* PXLAlbumViewModel.swift in Sources */,
 				F285904423CF1291002B68D2 /* PXLPhotoConverter.swift in Sources */,
 				F285904723CF137D002B68D2 /* PXLProductConverter.swift in Sources */,
 			);
