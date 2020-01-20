@@ -23,6 +23,14 @@ class PXLApiRequests {
         }
         return ["api_key": apiKey]
     }
+    
+    private func defaultPostParameters() -> [String: Any] {
+        guard let apiKey = apiKey else {
+            assertionFailure("Your Pixlee API key must be set before making API calls.")
+            return [:]
+        }
+        return ["API_KEY": apiKey]
+    }
 
     private func postHeaders(headers: [String: String], parameters: [String: Any]) -> [String: String] {
         var httpHeaders = [String: String]()
@@ -42,10 +50,8 @@ class PXLApiRequests {
         if let secret = self.secretKey {
             if let parametersData = try? JSONSerialization.data(withJSONObject: newParameters, options: []), let jsonParameters = String(data: parametersData, encoding: String.Encoding.utf8) {
                 let signedParameters = jsonParameters.hmac(algorithm: .SHA1, key: secret)
-                print("Converted hex: \(signedParameters)")
-
                 let timestamp = Date().timeIntervalSinceNow
-//                let hmac = jsonParameters.digest(.sha1, key: secret)
+
                 httpHeaders["Signature"] = signedParameters
                 httpHeaders["X-Authorization-Timestamp"] = "\(timestamp)"
             }
@@ -127,13 +133,9 @@ class PXLApiRequests {
         let url = analyitcsBaseURL + event.eventName
         
         do {
-            var params = event.logParameters
-            if let apiKey = apiKey {
-                params["API_KEY"] = apiKey
-            }
-            
-            let postHeaders = self.postHeaders(headers: [:], parameters: params)
-            let request = try PXLApiRequests.urlRequest(.post, url, parameters: params, encoding: JSONEncoding.default, headers: postHeaders)
+            let parameters = defaultPostParameters().reduce(into: event.logParameters) { (r, e) in r[e.0] = e.1 }
+            let postHeaders = self.postHeaders(headers: [:], parameters: parameters)
+            let request = try PXLApiRequests.urlRequest(.post, url, parameters: parameters, encoding: JSONEncoding.default, headers: postHeaders)
             return request
         } catch {
             fatalError("Worng url request")
