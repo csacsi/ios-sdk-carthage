@@ -71,6 +71,29 @@ struct PXLPhoto {
     }
 
     func photoUrl(for size: PXLPhotoSize) -> URL? {
+        if contentType == "video" {
+            return getResizedPhotoUrl(for: size)
+        }
+
+        if approved {
+            return getCDNPhotoUrl(for: size)
+        } else {
+            return getResizedPhotoUrl(for: size)
+        }
+    }
+
+    func getResizedPhotoUrl(for size: PXLPhotoSize) -> URL? {
+        switch size {
+        case .thumbnail:
+            return thumbnailUrl
+        case .medium:
+            return mediumUrl
+        case .big:
+            return bigUrl
+        }
+    }
+
+    func getCDNPhotoUrl(for size: PXLPhotoSize) -> URL? {
         switch size {
         case .thumbnail:
             return cdnSmallUrl
