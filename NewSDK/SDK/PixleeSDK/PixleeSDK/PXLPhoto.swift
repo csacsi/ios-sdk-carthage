@@ -17,60 +17,60 @@ public enum PXLPhotoSize {
 }
 
 public struct PXLPhoto {
-    let id: Int
-    let photoTitle: String?
-    let latitude: Double?
-    let longitude: Double?
-    let taggedAt: Date?
-    let emailAddress: String?
-    let instagramFollowers: Int?
-    let twitterFollowers: Int?
-    let avatarUrl: URL?
-    let username: String
-    let connectedUserId: Int
-    let source: String
-    let contentType: String
-    let dataFileName: String?
-    let mediumUrl: URL?
-    let bigUrl: URL?
-    let thumbnailUrl: URL?
-    let sourceUrl: URL?
-    let mediaId: String?
-    let existIn: Int?
-    let collectTerm: String?
-    let albumPhotoId: Int
-    let albumId: Int
-    let likeCount: Int?
-    let shareCount: Int?
-    let actionLink: URL?
-    let actionLinkText: String?
-    let actionLinkTitle: String?
-    let actionLinkPhoto: String?
-    let updatedAt: Date?
-    let isStarred: Bool?
-    let approved: Bool
-    let archived: Bool?
-    let isFlagged: Bool?
-    let unreadCount: Int?
-    let albumActionLink: URL?
-    let title: String?
-    let messaged: Bool?
-    let hasPermission: Bool?
-    let awaitingPermission: Bool?
-    let instUserHasLiked: Bool?
-    let platformLink: URL?
-    let products: [PXLProduct]?
-    let cdnSmallUrl: URL?
-    let cdnMediumUrl: URL?
-    let cdnLargeUrl: URL?
-    let cdnOriginalUrl: URL?
+    public let id: Int
+    public let photoTitle: String?
+    public let latitude: Double?
+    public let longitude: Double?
+    public let taggedAt: Date?
+    public let emailAddress: String?
+    public let instagramFollowers: Int?
+    public let twitterFollowers: Int?
+    public let avatarUrl: URL?
+    public let username: String
+    public let connectedUserId: Int
+    public let source: String
+    public let contentType: String
+    public let dataFileName: String?
+    public let mediumUrl: URL?
+    public let bigUrl: URL?
+    public let thumbnailUrl: URL?
+    public let sourceUrl: URL?
+    public let mediaId: String?
+    public let existIn: Int?
+    public let collectTerm: String?
+    public let albumPhotoId: Int
+    public let albumId: Int
+    public let likeCount: Int?
+    public let shareCount: Int?
+    public let actionLink: URL?
+    public let actionLinkText: String?
+    public let actionLinkTitle: String?
+    public let actionLinkPhoto: String?
+    public let updatedAt: Date?
+    public let isStarred: Bool?
+    public let approved: Bool
+    public let archived: Bool?
+    public let isFlagged: Bool?
+    public let unreadCount: Int?
+    public let albumActionLink: URL?
+    public let title: String?
+    public let messaged: Bool?
+    public let hasPermission: Bool?
+    public let awaitingPermission: Bool?
+    public let instUserHasLiked: Bool?
+    public let platformLink: URL?
+    public let products: [PXLProduct]?
+    public let cdnSmallUrl: URL?
+    public let cdnMediumUrl: URL?
+    public let cdnLargeUrl: URL?
+    public let cdnOriginalUrl: URL?
 
-    var coordinate: CLLocationCoordinate2D? {
+    public var coordinate: CLLocationCoordinate2D? {
         guard let latitude = self.latitude, let longitude = self.longitude else { return nil }
         return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
     }
 
-    func photoUrl(for size: PXLPhotoSize) -> URL? {
+    public func photoUrl(for size: PXLPhotoSize) -> URL? {
         if contentType == "video" {
             return getResizedPhotoUrl(for: size)
         }
@@ -104,7 +104,7 @@ public struct PXLPhoto {
         }
     }
 
-    var sourceIconImage: UIImage? {
+    public var sourceIconImage: UIImage? {
         switch source {
         case "instagram":
             return UIImage(named: "instagram", in: Bundle(identifier: "Pixlee.pixlee-sdk"), with: nil)

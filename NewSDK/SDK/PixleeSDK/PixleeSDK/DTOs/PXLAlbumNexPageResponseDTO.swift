@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - PXLAlbumNextPageResponse
 
-public struct PXLAlbumNextPageResponse: Codable {
+struct PXLAlbumNextPageResponse: Codable {
     let accountID, albumID, page, perPage: Int
     let total: Int
     let next: Bool
@@ -29,7 +29,7 @@ public struct PXLAlbumNextPageResponse: Codable {
 
 // MARK: - BoundingBoxProduct
 
-public struct BoundingBoxProduct: Codable {
+struct BoundingBoxProduct: Codable {
     let x, y, width, height: Int
     let aspectRatio, productID: Int
 
@@ -42,7 +42,7 @@ public struct BoundingBoxProduct: Codable {
 
 // MARK: - ReviewsInfo
 
-public struct PXLReviewsInfo: Codable {
+struct PXLReviewsInfo: Codable {
     let numReviews, averageRating: Int
     let reviews: [PXLReview]
 
@@ -53,7 +53,7 @@ public struct PXLReviewsInfo: Codable {
     }
 }
 
-public struct PXLReview: Codable {
+struct PXLReview: Codable {
     let id: Int
     let title: String
     let content: String

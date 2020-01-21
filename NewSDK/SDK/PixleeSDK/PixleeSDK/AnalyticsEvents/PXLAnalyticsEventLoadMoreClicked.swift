@@ -12,6 +12,10 @@ public struct PXLAnalyticsEventLoadMoreClicked: PXLAnalyticsEvent {
     let album: PXLAlbum
 
     public var eventName = "loadMore"
+    
+    public init(album:PXLAlbum){
+        self.album = album
+    }
 
     public var logParameters: [String: Any] {
         let udid = UIDevice.current.identifierForVendor?.uuidString ?? "Unknown udid"

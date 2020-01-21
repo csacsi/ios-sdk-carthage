@@ -13,6 +13,10 @@ public struct PXLAnalyticsEventOpenedLightBox: PXLAnalyticsEvent {
 
     public var eventName = "openedLightbox"
 
+    public init(photo: PXLPhoto) {
+        self.photo = photo
+    }
+
     public var logParameters: [String: Any] {
         let udid = UIDevice.current.identifierForVendor?.uuidString ?? "Unknown udid"
 

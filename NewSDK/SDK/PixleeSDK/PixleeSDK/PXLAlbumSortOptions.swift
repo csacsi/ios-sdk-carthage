@@ -38,8 +38,13 @@ public enum PXLAlbumSortType: Int, Codable {
 }
 
 public struct PXLAlbumSortOptions: Codable {
-    let sortType: PXLAlbumSortType
-    let ascending: Bool
+    public let sortType: PXLAlbumSortType
+    public let ascending: Bool
+
+    public init(sortType: PXLAlbumSortType, ascending: Bool) {
+        self.sortType = sortType
+        self.ascending = ascending
+    }
 
     var urlParamString: String? {
         var options = [String: Any]()

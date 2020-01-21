@@ -10,28 +10,28 @@ import Alamofire
 import Foundation
 
 public class PXLClient {
-    static var sharedClient = PXLClient()
+    public static var sharedClient = PXLClient()
 
     private let apiRequests = PXLApiRequests()
 
     private let photoConverter = PXLPhotoConverter(productConverter: PXLProductConverter())
     private var loadingOperations: [String: [Int: DataRequest?]] = [:]
 
-    var apiKey: String? {
+    public var apiKey: String? {
         didSet {
             apiRequests.apiKey = apiKey
         }
     }
 
-    var secretKey: String? {
+    public var secretKey: String? {
         didSet {
             apiRequests.secretKey = secretKey
         }
     }
 
-    func getPhotoWithPhotoAlbumId(photoAlbumId: String, completionHandler: ((PXLPhoto?, Error?) -> Void)?) -> DataRequest {
+    public func getPhotoWithPhotoAlbumId(photoAlbumId: String, completionHandler: ((PXLPhoto?, Error?) -> Void)?) -> DataRequest {
         return AF.request(apiRequests.getPhotoWithPhotoAlbumId(photoAlbumId)).responseDecodable { (response: DataResponse<PXLPhotoResponseDTO, AFError>) in
-            
+
 //            if let data = response.data, let responseJSONString = String(data: data, encoding: .utf8) {
 //                print("responseJson: \(responseJSONString)")
 //            }
@@ -48,7 +48,7 @@ public class PXLClient {
         }
     }
 
-    func loadNextPageOfPhotosForAlbum(album: PXLAlbum, completionHandler: (([PXLPhoto]?, Error?) -> Void)?) -> DataRequest? {
+    public func loadNextPageOfPhotosForAlbum(album: PXLAlbum, completionHandler: (([PXLPhoto]?, Error?) -> Void)?) -> DataRequest? {
         if album.hasNextPage {
             let nextPage = album.lastPageFetched == NSNotFound ? 1 : album.lastPageFetched + 1
             if let identifier = album.identifier {
@@ -113,7 +113,7 @@ public class PXLClient {
         }
     }
 
-    func handleAlbumResponse(_ response: DataResponse<PXLAlbumNextPageResponse, AFError>, album: PXLAlbum) -> (newPhotos: [PXLPhoto]?, error: AFError?) {
+    private func handleAlbumResponse(_ response: DataResponse<PXLAlbumNextPageResponse, AFError>, album: PXLAlbum) -> (newPhotos: [PXLPhoto]?, error: AFError?) {
         switch response.result {
         case let .success(responseDTO):
             if album.lastPageFetched == NSNotFound || responseDTO.page > album.lastPageFetched {
@@ -132,7 +132,7 @@ public class PXLClient {
         }
     }
 
-    func logAnalyticsEvent(event: PXLAnalyticsEvent, completionHandler: @escaping (Error?) -> Void) -> DataRequest {
+    public func logAnalyticsEvent(event: PXLAnalyticsEvent, completionHandler: @escaping (Error?) -> Void) -> DataRequest {
         return AF.request(apiRequests.postLogAnalyticsEvent(event)).responseJSON { response in
             switch response.result {
             case let .success(json):

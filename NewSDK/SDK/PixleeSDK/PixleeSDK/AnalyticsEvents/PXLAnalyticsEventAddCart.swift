@@ -16,6 +16,13 @@ public struct PXLAnalyticsEventAddCart: PXLAnalyticsEvent {
 
     public var eventName = "addToCart"
 
+    public init(sku: String, quantity: Int, price: String, currency: String? = nil) {
+        self.sku = sku
+        self.quantity = quantity
+        self.price = price
+        self.currency = currency
+    }
+
     public var logParameters: [String: Any] {
         let udid = UIDevice.current.identifierForVendor?.uuidString ?? "Unknown udid"
 

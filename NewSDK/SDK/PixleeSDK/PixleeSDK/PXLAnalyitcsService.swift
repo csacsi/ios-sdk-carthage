@@ -10,7 +10,7 @@ import Alamofire
 import Foundation
 
 public class PXLAnalyitcsService {
-    static var sharedAnalyitcs = PXLAnalyitcsService()
+    public static var sharedAnalyitcs = PXLAnalyitcsService()
 
     private var client: PXLClient
 
@@ -18,7 +18,7 @@ public class PXLAnalyitcsService {
         client = PXLClient.sharedClient
     }
 
-    func logEvent(event: PXLAnalyticsEvent, completionHandler: @escaping (Error?) -> Void) -> DataRequest {
+    public func logEvent(event: PXLAnalyticsEvent, completionHandler: @escaping (Error?) -> Void) -> DataRequest {
         print("⚠️PIXLEE SDK - Logging event:\(event.eventName)")
         return client.logAnalyticsEvent(event: event, completionHandler: completionHandler)
     }
