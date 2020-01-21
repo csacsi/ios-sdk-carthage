@@ -17,7 +17,7 @@ public struct PXLAnalyticsEventConvertedPhoto: PXLAnalyticsEvent {
 
     public var eventName = "conversion"
 
-    public init(cartContents: [Int], cartTotal: Int, cartTotalQantity: Int, orderId: Int? = nil, currency: String? = nil) {
+    public init(cartContents: [Int], cartTotal: Int, cartTotalQuantity: Int, orderId: Int? = nil, currency: String? = nil) {
         self.cartContents = cartContents
         self.cartTotal = cartTotal
         self.cartTotalQuantity = cartTotalQuantity
