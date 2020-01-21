@@ -48,7 +48,7 @@ extension String {
     }
 
     private func stringFromResult(result: UnsafeMutablePointer<CUnsignedChar>, length: Int) -> String {
-        var hash = NSMutableString()
+        let hash = NSMutableString()
         for i in 0 ..< length {
             hash.appendFormat("%02x", result[i])
         }

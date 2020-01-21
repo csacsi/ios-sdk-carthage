@@ -21,10 +21,10 @@ struct PXLProductDTO: Codable {
     let stock: Int?
     let currency: String?
     let category: [Int]?
-    let extraUrls: JSONAny?
+//    let extraUrls: JSONAny?
     let customCtaPhoto: String?
     let linkValid: Bool?
-    let totalReviews, averageRating, datcOverride: JSONNull?
+//    let totalReviews, averageRating, datcOverride: JSONNull?
     let reviewsInfo: PXLReviewsInfo
     let productRegionLinks: [PXLProductRegionLink]
     let productTaggedAt: Int?
@@ -41,12 +41,12 @@ struct PXLProductDTO: Codable {
         case title, sku
         case productDescription = "description"
         case price, stock, currency, category
-        case extraUrls = "extra_urls"
+//        case extraUrls = "extra_urls"
         case customCtaPhoto = "custom_cta_photo"
         case linkValid = "link_valid"
-        case totalReviews = "total_reviews"
-        case averageRating = "average_rating"
-        case datcOverride = "datc_override"
+//        case totalReviews = "total_reviews"
+//        case averageRating = "average_rating"
+//        case datcOverride = "datc_override"
         case reviewsInfo = "reviews_info"
         case productRegionLinks = "product_region_links"
         case productTaggedAt = "product_tagged_at"
