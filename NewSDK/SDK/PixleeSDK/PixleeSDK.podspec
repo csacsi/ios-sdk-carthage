@@ -30,24 +30,24 @@ Pod::Spec.new do |spec|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
 
-    s.description      = <<-DESC
+    spec.description      = <<-DESC
   TODO: Add long description of the pod here.
                          DESC
 
-    s.homepage         = 'https://github.com/csacsi/ios-sdk-carthage'
-    # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
-    s.license          = { :type => 'MIT', :file => 'NewSDK/SDK/PixleeSDK/LICENSE' }
-    s.author           = { 'pixlee-accounts' => 'rachidi29@gmail.com' }
-    s.source           = { :git => 'https://github.com/csacsi/ios-sdk-carthage.git', :tag => s.version.to_s}
-    # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+    spec.homepage         = 'https://github.com/csacsi/ios-sdk-carthage'
+    # spec.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+    spec.license          = { :type => 'MIT', :file => 'NewSDK/SDK/PixleeSDK/LICENSE' }
+    spec.author           = { 'pixlee-accounts' => 'rachidi29@gmail.com' }
+    spec.source           = { :git => 'https://github.com/csacsi/ios-sdk-carthage.git', :tag => spec.version.to_s}
+    # spec.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-    s.ios.deployment_target = '8.0'
+    spec.ios.deployment_target = '13.0'
 
-    s.source_files = 'NewSDK/SDK/PixleeSDK/**/*'
+    spec.source_files = 'NewSDK/SDK/PixleeSDK/**/*'
     
-    s.resources = "NewSDK/SDK/PixleeSDK/**/*.{png,jpeg,jpg,storyboard,xib,xcassets}"
+    spec.resources = "NewSDK/SDK/PixleeSDK/**/*.{png,jpeg,jpg,storyboard,xib,xcassets}"
 
-    # s.public_header_files = 'Pod/Classes/**/*.h'
-    # s.frameworks = 'UIKit', 'MapKit'
-     s.dependency 'Alamofire', '~> 5.0.0-rc.3'
+    # spec.public_header_files = 'Pod/Classes/**/*.h'
+    # spec.frameworks = 'UIKit', 'MapKit'
+     spec.dependency 'Alamofire', '~> 5.0.0-rc.3'
 end
