@@ -1,0 +1,6 @@
+framework module Pods_PixleeSDK {
+  umbrella header "Pods-PixleeSDK-umbrella.h"
+
+  export *
+  module * { export * }
+}

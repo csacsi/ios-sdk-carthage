@@ -8,6 +8,7 @@ target 'Example' do
   # Pods for Example
   pod 'Alamofire', '~> 5.0.0-rc.3'
   pod 'Nuke'
+  pod 'PixleeSDK', :path => '~/../Pod'
 
   target 'ExampleTests' do
     inherit! :search_paths
