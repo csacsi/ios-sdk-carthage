@@ -20,7 +20,7 @@ public struct PXLAnalyticsEventConvertedPhoto: PXLAnalyticsEvent {
     public init(cartContents: [Int], cartTotal: Int, cartTotalQantity: Int, orderId: Int? = nil, currency: String? = nil) {
         self.cartContents = cartContents
         self.cartTotal = cartTotal
-        cartTotalQuantity = cartTotalQuantity
+        self.cartTotalQuantity = cartTotalQuantity
         self.orderId = orderId
         self.currency = currency
     }
