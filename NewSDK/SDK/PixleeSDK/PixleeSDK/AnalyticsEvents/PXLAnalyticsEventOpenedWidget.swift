@@ -8,13 +8,13 @@
 
 import UIKit
 
-struct PXLAnalyticsEventOpenedWidget: PXLAnalyticsEvent {
+public struct PXLAnalyticsEventOpenedWidget: PXLAnalyticsEvent {
     let album: PXLAlbum
     let widget: String
 
-    var eventName = "openedWidget"
+    public var eventName = "openedWidget"
 
-    var logParameters: [String: Any] {
+    public var logParameters: [String: Any] {
         let udid = UIDevice.current.identifierForVendor?.uuidString ?? "Unknown udid"
 
         var parameters: [String: Any] = ["widget": widget,

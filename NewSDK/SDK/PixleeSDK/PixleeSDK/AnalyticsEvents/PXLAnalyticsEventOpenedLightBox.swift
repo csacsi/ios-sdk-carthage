@@ -8,12 +8,12 @@
 
 import UIKit
 
-struct PXLAnalyticsEventOpenedLightBox: PXLAnalyticsEvent {
+public struct PXLAnalyticsEventOpenedLightBox: PXLAnalyticsEvent {
     let photo: PXLPhoto
 
-    var eventName = "openedLightbox"
+    public var eventName = "openedLightbox"
 
-    var logParameters: [String: Any] {
+    public var logParameters: [String: Any] {
         let udid = UIDevice.current.identifierForVendor?.uuidString ?? "Unknown udid"
 
         let parameters: [String: Any] = [

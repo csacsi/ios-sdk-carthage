@@ -8,16 +8,16 @@
 
 import UIKit
 
-struct PXLAnalyticsEventConvertedPhoto: PXLAnalyticsEvent {
+public struct PXLAnalyticsEventConvertedPhoto: PXLAnalyticsEvent {
     let cartContents: [Int]
     let cartTotal: Int
     let cartTotalQuantity: Int
     let orderId: Int?
     let currency: String?
 
-    var eventName = "conversion"
+    public var eventName = "conversion"
 
-    var logParameters: [String: Any] {
+    public var logParameters: [String: Any] {
         let udid = UIDevice.current.identifierForVendor?.uuidString ?? "Unknown udid"
 
         var parameters: [String: Any] = ["cart_contents": cartContents,

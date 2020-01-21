@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		9407E9AEB6EE2852592B8C48 /* Pods_PixleeSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9CA68AED794B5A1874D6872 /* Pods_PixleeSDK.framework */; };
-		F2E30E4323D7841900CDD977 /* PixleeSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E30E4223D7841900CDD977 /* PixleeSDK.swift */; };
 		F2E30E6223D784CC00CDD977 /* PXLProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E30E4923D784CB00CDD977 /* PXLProduct.swift */; };
 		F2E30E6323D784CC00CDD977 /* PXLClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E30E4A23D784CB00CDD977 /* PXLClient.swift */; };
 		F2E30E6423D784CC00CDD977 /* PXLAnalyitcsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E30E4B23D784CB00CDD977 /* PXLAnalyitcsService.swift */; };
@@ -49,7 +48,6 @@
 		64C46AFE6CF2C42EF69BE6EB /* Pods-PixleeSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PixleeSDK.release.xcconfig"; path = "Target Support Files/Pods-PixleeSDK/Pods-PixleeSDK.release.xcconfig"; sourceTree = "<group>"; };
 		C9CA68AED794B5A1874D6872 /* Pods_PixleeSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PixleeSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2E30E3F23D7841900CDD977 /* libPixleeSDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPixleeSDK.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		F2E30E4223D7841900CDD977 /* PixleeSDK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixleeSDK.swift; sourceTree = "<group>"; };
 		F2E30E4923D784CB00CDD977 /* PXLProduct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PXLProduct.swift; sourceTree = "<group>"; };
 		F2E30E4A23D784CB00CDD977 /* PXLClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PXLClient.swift; sourceTree = "<group>"; };
 		F2E30E4B23D784CB00CDD977 /* PXLAnalyitcsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PXLAnalyitcsService.swift; sourceTree = "<group>"; };
@@ -136,7 +134,6 @@
 				F2E30E4A23D784CB00CDD977 /* PXLClient.swift */,
 				F2E30E6023D784CC00CDD977 /* PXLPhoto.swift */,
 				F2E30E4923D784CB00CDD977 /* PXLProduct.swift */,
-				F2E30E4223D7841900CDD977 /* PixleeSDK.swift */,
 				F2E30E7723D7853300CDD977 /* Resources */,
 			);
 			path = PixleeSDK;
@@ -293,7 +290,6 @@
 				F2E30E6E23D784CC00CDD977 /* PXLPhotoResponseDTO.swift in Sources */,
 				F2E30E7023D784CC00CDD977 /* PXLAlbumNexPageResponseDTO.swift in Sources */,
 				F2E30E6323D784CC00CDD977 /* PXLClient.swift in Sources */,
-				F2E30E4323D7841900CDD977 /* PixleeSDK.swift in Sources */,
 				F2E30E6B23D784CC00CDD977 /* PXLAnalyticsEventLoadMoreClicked.swift in Sources */,
 				F2E30E7223D784CC00CDD977 /* PXLProductConverter.swift in Sources */,
 				F2E30E7623D784CC00CDD977 /* PXLAlbumSortOptions.swift in Sources */,

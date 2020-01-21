@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum PXLAlbumSortType: Int, Codable {
+public enum PXLAlbumSortType: Int, Codable {
     case None
     case Recency
     case Random
@@ -37,7 +37,7 @@ enum PXLAlbumSortType: Int, Codable {
     }
 }
 
-struct PXLAlbumSortOptions: Codable {
+public struct PXLAlbumSortOptions: Codable {
     let sortType: PXLAlbumSortType
     let ascending: Bool
 

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-protocol PXLAnalyticsEvent {
+public protocol PXLAnalyticsEvent {
     var eventName: String {get}
     var logParameters: [String: Any] { get }
 }

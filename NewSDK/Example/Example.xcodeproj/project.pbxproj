@@ -21,31 +21,9 @@
 		F24D430123C65BBF0091E324 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F24D42FF23C65BBF0091E324 /* LaunchScreen.storyboard */; };
 		F24D430C23C65BC00091E324 /* ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24D430B23C65BC00091E324 /* ExampleTests.swift */; };
 		F24D431723C65BC00091E324 /* ExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24D431623C65BC00091E324 /* ExampleUITests.swift */; };
-		F24D433123C65C1D0091E324 /* ImageAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F24D432623C65C1D0091E324 /* ImageAssets.xcassets */; };
-		F24D433223C65C1D0091E324 /* PXLProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24D432823C65C1D0091E324 /* PXLProduct.swift */; };
-		F24D433323C65C1D0091E324 /* PXLAlbumFilterOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24D432923C65C1D0091E324 /* PXLAlbumFilterOptions.swift */; };
-		F24D433423C65C1D0091E324 /* PXLPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24D432A23C65C1D0091E324 /* PXLPhoto.swift */; };
-		F24D433523C65C1D0091E324 /* PXLAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24D432B23C65C1D0091E324 /* PXLAlbum.swift */; };
-		F24D433623C65C1D0091E324 /* PXLAlbumSortOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24D432C23C65C1D0091E324 /* PXLAlbumSortOptions.swift */; };
-		F24D433723C65C1D0091E324 /* PXLApiRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24D432D23C65C1D0091E324 /* PXLApiRequests.swift */; };
-		F24D433823C65C1D0091E324 /* SwiftCrypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24D432F23C65C1D0091E324 /* SwiftCrypto.swift */; };
-		F24D433923C65C1D0091E324 /* PXLClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24D433023C65C1D0091E324 /* PXLClient.swift */; };
 		F25A2BD223CF952500D0D6D2 /* PXLProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25A2BD023CF952500D0D6D2 /* PXLProductCell.swift */; };
 		F25A2BD323CF952500D0D6D2 /* PXLProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F25A2BD123CF952500D0D6D2 /* PXLProductCell.xib */; };
 		F272622323D1C6D7000EB947 /* PXLAlbumViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F272622223D1C6D7000EB947 /* PXLAlbumViewModel.swift */; };
-		F272622523D5BDEA000EB947 /* PXLAnalyitcsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F272622423D5BDEA000EB947 /* PXLAnalyitcsService.swift */; };
-		F272622723D5BE16000EB947 /* PXLAnalyitcsEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F272622623D5BE16000EB947 /* PXLAnalyitcsEvent.swift */; };
-		F272622A23D5C58A000EB947 /* PXLAnalyticsEventAddCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = F272622923D5C58A000EB947 /* PXLAnalyticsEventAddCart.swift */; };
-		F272622C23D5C5A1000EB947 /* PXLAnalyticsEventConvertedPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = F272622B23D5C5A1000EB947 /* PXLAnalyticsEventConvertedPhoto.swift */; };
-		F272622E23D5C69C000EB947 /* PXLAnalyticsEventOpenedWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F272622D23D5C69C000EB947 /* PXLAnalyticsEventOpenedWidget.swift */; };
-		F272623023D5C81A000EB947 /* PXLAnalyticsEventLoadMoreClicked.swift in Sources */ = {isa = PBXBuildFile; fileRef = F272622F23D5C81A000EB947 /* PXLAnalyticsEventLoadMoreClicked.swift */; };
-		F272623223D5C8AC000EB947 /* PXLAnalyticsEventActionClicked.swift in Sources */ = {isa = PBXBuildFile; fileRef = F272623123D5C8AC000EB947 /* PXLAnalyticsEventActionClicked.swift */; };
-		F272623423D5C959000EB947 /* PXLAnalyticsEventOpenedLightBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = F272623323D5C959000EB947 /* PXLAnalyticsEventOpenedLightBox.swift */; };
-		F285904423CF1291002B68D2 /* PXLPhotoConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F285904323CF1291002B68D2 /* PXLPhotoConverter.swift */; };
-		F285904723CF137D002B68D2 /* PXLProductConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F285904623CF137D002B68D2 /* PXLProductConverter.swift */; };
-		F2A0960823C9B9CF00071640 /* PXLAlbumNexPageResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A0960723C9B9CF00071640 /* PXLAlbumNexPageResponseDTO.swift */; };
-		F2A0960A23CB64EC00071640 /* PXLPhotoResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A0960923CB64EC00071640 /* PXLPhotoResponseDTO.swift */; };
-		F2A0960C23CB656B00071640 /* PXLProductDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A0960B23CB656B00071640 /* PXLProductDTO.swift */; };
 		F2F8337323CB86BE0072641B /* ImageDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F8337123CB86BE0072641B /* ImageDetailsViewController.swift */; };
 		F2F8337423CB86BE0072641B /* ImageDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2F8337223CB86BE0072641B /* ImageDetailsViewController.xib */; };
 		F2F8337823CB8F750072641B /* PXLImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F8337623CB8F750072641B /* PXLImageCell.swift */; };
@@ -96,31 +74,9 @@
 		F24D431223C65BC00091E324 /* ExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F24D431623C65BC00091E324 /* ExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleUITests.swift; sourceTree = "<group>"; };
 		F24D431823C65BC00091E324 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F24D432623C65C1D0091E324 /* ImageAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ImageAssets.xcassets; sourceTree = "<group>"; };
-		F24D432823C65C1D0091E324 /* PXLProduct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PXLProduct.swift; sourceTree = "<group>"; };
-		F24D432923C65C1D0091E324 /* PXLAlbumFilterOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PXLAlbumFilterOptions.swift; sourceTree = "<group>"; };
-		F24D432A23C65C1D0091E324 /* PXLPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PXLPhoto.swift; sourceTree = "<group>"; };
-		F24D432B23C65C1D0091E324 /* PXLAlbum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PXLAlbum.swift; sourceTree = "<group>"; };
-		F24D432C23C65C1D0091E324 /* PXLAlbumSortOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PXLAlbumSortOptions.swift; sourceTree = "<group>"; };
-		F24D432D23C65C1D0091E324 /* PXLApiRequests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PXLApiRequests.swift; sourceTree = "<group>"; };
-		F24D432F23C65C1D0091E324 /* SwiftCrypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftCrypto.swift; sourceTree = "<group>"; };
-		F24D433023C65C1D0091E324 /* PXLClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PXLClient.swift; sourceTree = "<group>"; };
 		F25A2BD023CF952500D0D6D2 /* PXLProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PXLProductCell.swift; sourceTree = "<group>"; };
 		F25A2BD123CF952500D0D6D2 /* PXLProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PXLProductCell.xib; sourceTree = "<group>"; };
 		F272622223D1C6D7000EB947 /* PXLAlbumViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PXLAlbumViewModel.swift; sourceTree = "<group>"; };
-		F272622423D5BDEA000EB947 /* PXLAnalyitcsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PXLAnalyitcsService.swift; sourceTree = "<group>"; };
-		F272622623D5BE16000EB947 /* PXLAnalyitcsEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PXLAnalyitcsEvent.swift; sourceTree = "<group>"; };
-		F272622923D5C58A000EB947 /* PXLAnalyticsEventAddCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PXLAnalyticsEventAddCart.swift; sourceTree = "<group>"; };
-		F272622B23D5C5A1000EB947 /* PXLAnalyticsEventConvertedPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PXLAnalyticsEventConvertedPhoto.swift; sourceTree = "<group>"; };
-		F272622D23D5C69C000EB947 /* PXLAnalyticsEventOpenedWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PXLAnalyticsEventOpenedWidget.swift; sourceTree = "<group>"; };
-		F272622F23D5C81A000EB947 /* PXLAnalyticsEventLoadMoreClicked.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PXLAnalyticsEventLoadMoreClicked.swift; sourceTree = "<group>"; };
-		F272623123D5C8AC000EB947 /* PXLAnalyticsEventActionClicked.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PXLAnalyticsEventActionClicked.swift; sourceTree = "<group>"; };
-		F272623323D5C959000EB947 /* PXLAnalyticsEventOpenedLightBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PXLAnalyticsEventOpenedLightBox.swift; sourceTree = "<group>"; };
-		F285904323CF1291002B68D2 /* PXLPhotoConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PXLPhotoConverter.swift; sourceTree = "<group>"; };
-		F285904623CF137D002B68D2 /* PXLProductConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PXLProductConverter.swift; sourceTree = "<group>"; };
-		F2A0960723C9B9CF00071640 /* PXLAlbumNexPageResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PXLAlbumNexPageResponseDTO.swift; sourceTree = "<group>"; };
-		F2A0960923CB64EC00071640 /* PXLPhotoResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PXLPhotoResponseDTO.swift; sourceTree = "<group>"; };
-		F2A0960B23CB656B00071640 /* PXLProductDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PXLProductDTO.swift; sourceTree = "<group>"; };
 		F2F8337123CB86BE0072641B /* ImageDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailsViewController.swift; sourceTree = "<group>"; };
 		F2F8337223CB86BE0072641B /* ImageDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageDetailsViewController.xib; sourceTree = "<group>"; };
 		F2F8337623CB8F750072641B /* PXLImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PXLImageCell.swift; path = Example/Cells/PXLImageCell.swift; sourceTree = SOURCE_ROOT; };
@@ -221,7 +177,6 @@
 		F24D42F323C65BBE0091E324 /* Example */ = {
 			isa = PBXGroup;
 			children = (
-				F24D432423C65BFF0091E324 /* SDK */,
 				F24D42F423C65BBE0091E324 /* AppDelegate.swift */,
 				F24D42F623C65BBE0091E324 /* SceneDelegate.swift */,
 				F24D42F823C65BBE0091E324 /* ViewController.swift */,
@@ -253,83 +208,6 @@
 				F24D431823C65BC00091E324 /* Info.plist */,
 			);
 			path = ExampleUITests;
-			sourceTree = "<group>";
-		};
-		F24D432423C65BFF0091E324 /* SDK */ = {
-			isa = PBXGroup;
-			children = (
-				F24D432723C65C1D0091E324 /* Objects */,
-				F24D432523C65C1D0091E324 /* Resources */,
-			);
-			path = SDK;
-			sourceTree = "<group>";
-		};
-		F24D432523C65C1D0091E324 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				F24D432623C65C1D0091E324 /* ImageAssets.xcassets */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		F24D432723C65C1D0091E324 /* Objects */ = {
-			isa = PBXGroup;
-			children = (
-				F24D432D23C65C1D0091E324 /* PXLApiRequests.swift */,
-				F24D433023C65C1D0091E324 /* PXLClient.swift */,
-				F272622423D5BDEA000EB947 /* PXLAnalyitcsService.swift */,
-				F272622823D5C57A000EB947 /* AnalyticsEvents */,
-				F24D432823C65C1D0091E324 /* PXLProduct.swift */,
-				F24D432C23C65C1D0091E324 /* PXLAlbumSortOptions.swift */,
-				F24D432923C65C1D0091E324 /* PXLAlbumFilterOptions.swift */,
-				F24D432A23C65C1D0091E324 /* PXLPhoto.swift */,
-				F24D432B23C65C1D0091E324 /* PXLAlbum.swift */,
-				F2A0960D23CB659A00071640 /* DTOs */,
-				F285904523CF1367002B68D2 /* Converters */,
-				F24D432E23C65C1D0091E324 /* Helpers */,
-			);
-			path = Objects;
-			sourceTree = "<group>";
-		};
-		F24D432E23C65C1D0091E324 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				F24D432F23C65C1D0091E324 /* SwiftCrypto.swift */,
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
-		F272622823D5C57A000EB947 /* AnalyticsEvents */ = {
-			isa = PBXGroup;
-			children = (
-				F272622623D5BE16000EB947 /* PXLAnalyitcsEvent.swift */,
-				F272622923D5C58A000EB947 /* PXLAnalyticsEventAddCart.swift */,
-				F272622B23D5C5A1000EB947 /* PXLAnalyticsEventConvertedPhoto.swift */,
-				F272622D23D5C69C000EB947 /* PXLAnalyticsEventOpenedWidget.swift */,
-				F272622F23D5C81A000EB947 /* PXLAnalyticsEventLoadMoreClicked.swift */,
-				F272623123D5C8AC000EB947 /* PXLAnalyticsEventActionClicked.swift */,
-				F272623323D5C959000EB947 /* PXLAnalyticsEventOpenedLightBox.swift */,
-			);
-			path = AnalyticsEvents;
-			sourceTree = "<group>";
-		};
-		F285904523CF1367002B68D2 /* Converters */ = {
-			isa = PBXGroup;
-			children = (
-				F285904323CF1291002B68D2 /* PXLPhotoConverter.swift */,
-				F285904623CF137D002B68D2 /* PXLProductConverter.swift */,
-			);
-			path = Converters;
-			sourceTree = "<group>";
-		};
-		F2A0960D23CB659A00071640 /* DTOs */ = {
-			isa = PBXGroup;
-			children = (
-				F2A0960723C9B9CF00071640 /* PXLAlbumNexPageResponseDTO.swift */,
-				F2A0960923CB64EC00071640 /* PXLPhotoResponseDTO.swift */,
-				F2A0960B23CB656B00071640 /* PXLProductDTO.swift */,
-			);
-			path = DTOs;
 			sourceTree = "<group>";
 		};
 		F2A0960E23CB784500071640 /* Cells */ = {
@@ -464,7 +342,6 @@
 				F24D430123C65BBF0091E324 /* LaunchScreen.storyboard in Resources */,
 				F2F8337923CB8F750072641B /* PXLImageCell.xib in Resources */,
 				F24D42FE23C65BBF0091E324 /* Assets.xcassets in Resources */,
-				F24D433123C65C1D0091E324 /* ImageAssets.xcassets in Resources */,
 				F2F8337423CB86BE0072641B /* ImageDetailsViewController.xib in Resources */,
 				F25A2BD323CF952500D0D6D2 /* PXLProductCell.xib in Resources */,
 				F24D42FC23C65BBE0091E324 /* Main.storyboard in Resources */,
@@ -596,36 +473,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F272622E23D5C69C000EB947 /* PXLAnalyticsEventOpenedWidget.swift in Sources */,
-				F24D433323C65C1D0091E324 /* PXLAlbumFilterOptions.swift in Sources */,
 				F228094723CFACE000B1E77C /* DateExtension.swift in Sources */,
-				F272623223D5C8AC000EB947 /* PXLAnalyticsEventActionClicked.swift in Sources */,
 				F2F8337823CB8F750072641B /* PXLImageCell.swift in Sources */,
-				F24D433523C65C1D0091E324 /* PXLAlbum.swift in Sources */,
-				F24D433823C65C1D0091E324 /* SwiftCrypto.swift in Sources */,
-				F24D433223C65C1D0091E324 /* PXLProduct.swift in Sources */,
-				F2A0960C23CB656B00071640 /* PXLProductDTO.swift in Sources */,
-				F272622523D5BDEA000EB947 /* PXLAnalyitcsService.swift in Sources */,
-				F272622723D5BE16000EB947 /* PXLAnalyitcsEvent.swift in Sources */,
-				F2A0960823C9B9CF00071640 /* PXLAlbumNexPageResponseDTO.swift in Sources */,
 				F2F8337323CB86BE0072641B /* ImageDetailsViewController.swift in Sources */,
 				F25A2BD223CF952500D0D6D2 /* PXLProductCell.swift in Sources */,
-				F272623023D5C81A000EB947 /* PXLAnalyticsEventLoadMoreClicked.swift in Sources */,
-				F272622A23D5C58A000EB947 /* PXLAnalyticsEventAddCart.swift in Sources */,
 				F24D42F923C65BBE0091E324 /* ViewController.swift in Sources */,
-				F2A0960A23CB64EC00071640 /* PXLPhotoResponseDTO.swift in Sources */,
 				F228094323CFA56A00B1E77C /* PXLAlbumViewController.swift in Sources */,
-				F24D433923C65C1D0091E324 /* PXLClient.swift in Sources */,
-				F24D433423C65C1D0091E324 /* PXLPhoto.swift in Sources */,
-				F24D433623C65C1D0091E324 /* PXLAlbumSortOptions.swift in Sources */,
 				F24D42F523C65BBE0091E324 /* AppDelegate.swift in Sources */,
-				F272622C23D5C5A1000EB947 /* PXLAnalyticsEventConvertedPhoto.swift in Sources */,
-				F24D433723C65C1D0091E324 /* PXLApiRequests.swift in Sources */,
 				F24D42F723C65BBE0091E324 /* SceneDelegate.swift in Sources */,
 				F272622323D1C6D7000EB947 /* PXLAlbumViewModel.swift in Sources */,
-				F285904423CF1291002B68D2 /* PXLPhotoConverter.swift in Sources */,
-				F272623423D5C959000EB947 /* PXLAnalyticsEventOpenedLightBox.swift in Sources */,
-				F285904723CF137D002B68D2 /* PXLProductConverter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

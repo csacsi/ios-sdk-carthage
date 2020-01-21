@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct PXLAlbumFilterOptions: Codable {
+public struct PXLAlbumFilterOptions: Codable {
     let minInstagramFollowers: Int?
     let minTwitterFollowers: Int?
     let contentSource: [String]?

@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct PXLProduct {
+public struct PXLProduct {
     let identifier: Int
     let linkText: String?
     let link: URL?

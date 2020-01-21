@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct PXLPhotoResponseDTO: Codable {
+public struct PXLPhotoResponseDTO: Codable {
     let data: PXLPhotoDTO
     let status: String
 
@@ -17,7 +17,7 @@ struct PXLPhotoResponseDTO: Codable {
     }
 }
 
-struct PXLPhotoDTO: Codable {
+public struct PXLPhotoDTO: Codable {
     let id: Int
     let photoTitle: String?
     let latitude, longitude: Double?
@@ -46,15 +46,15 @@ struct PXLPhotoDTO: Codable {
     let messaged: Bool?
     let hasPermission, awaitingPermission, socialUserHasLiked: Bool
     let platformLink: String
-    let customOrder: JSONNull?
+//    let customOrder: JSONNull?
     let hasHeavyPermission, awaitingHeavyPermission: Bool
     let permissionedAt: Int?
-    let heavyPermissionedAt, permissionedByUserID: JSONNull?
+//    let heavyPermissionedAt, permissionedByUserID: JSONNull?
     let locality, country: String?
     let isScheduled: Bool?
     let scheduler: String?
     let engagementRate: Double?
-    let notes: JSONNull?
+//    let notes: JSONNull?
     let markedAsSpam: Bool
     let uploaderAdditionalFields: PXLUploaderAdditionalFields
     let isInfluencer: Bool
@@ -67,7 +67,7 @@ struct PXLPhotoDTO: Codable {
     let language: String?
     let deletedAt: Int?
     let connectedUserSocialID: String
-    let subtype: JSONNull?
+//    let subtype: JSONNull?
     let narrowDistrict: String?
     let createdAt, approvedOnDate: Int
     let taggedUsernames: [String]
@@ -116,17 +116,17 @@ struct PXLPhotoDTO: Codable {
         case awaitingPermission = "awaiting_permission"
         case socialUserHasLiked = "social_user_has_liked"
         case platformLink = "platform_link"
-        case customOrder = "custom_order"
+//        case customOrder = "custom_order"
         case hasHeavyPermission = "has_heavy_permission"
         case awaitingHeavyPermission = "awaiting_heavy_permission"
         case permissionedAt = "permissioned_at"
-        case heavyPermissionedAt = "heavy_permissioned_at"
-        case permissionedByUserID = "permissioned_by_user_id"
+//        case heavyPermissionedAt = "heavy_permissioned_at"
+//        case permissionedByUserID = "permissioned_by_user_id"
         case locality, country
         case isScheduled = "is_scheduled"
         case scheduler
         case engagementRate = "engagement_rate"
-        case notes
+//        case notes
         case markedAsSpam = "marked_as_spam"
         case uploaderAdditionalFields = "uploader_additional_fields"
         case isInfluencer = "is_influencer"
@@ -144,7 +144,7 @@ struct PXLPhotoDTO: Codable {
         case language
         case deletedAt = "deleted_at"
         case connectedUserSocialID = "connected_user_social_id"
-        case subtype
+//        case subtype
         case narrowDistrict = "narrow_district"
         case createdAt = "created_at"
         case approvedOnDate = "approved_on_date"
@@ -158,7 +158,7 @@ struct PXLPhotoDTO: Codable {
 
 // MARK: - PXLUploaderAdditionalInfos
 
-struct PXLUploaderAdditionalFields: Codable {
+public struct PXLUploaderAdditionalFields: Codable {
     let height: String?
     let submissions: Int?
     let name: String?
@@ -166,7 +166,7 @@ struct PXLUploaderAdditionalFields: Codable {
 
 // MARK: - PixleeCDNPhotos
 
-struct PixleeCDNPhotos: Codable {
+public struct PixleeCDNPhotos: Codable {
     let smallURL, mediumURL, largeURL, originalURL: String
     let squareMediumURL, attributedMediumURL: String
 
