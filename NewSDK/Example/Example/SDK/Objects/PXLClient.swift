@@ -31,6 +31,10 @@ class PXLClient {
 
     func getPhotoWithPhotoAlbumId(photoAlbumId: String, completionHandler: ((PXLPhoto?, Error?) -> Void)?) -> DataRequest {
         return AF.request(apiRequests.getPhotoWithPhotoAlbumId(photoAlbumId)).responseDecodable { (response: DataResponse<PXLPhotoResponseDTO, AFError>) in
+            
+//            if let data = response.data, let responseJSONString = String(data: data, encoding: .utf8) {
+//                print("responseJson: \(responseJSONString)")
+//            }
 
             switch response.result {
             case let .success(responseDTO):

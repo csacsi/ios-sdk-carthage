@@ -9,18 +9,18 @@
 import UIKit
 
 class ViewController: UIViewController {
-    let album = PXLAlbum(identifier: "4515393")
+    let album = PXLAlbum(identifier: "5984962")
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         //        #warning Replace with your Pixlee API key.
-        PXLClient.sharedClient.apiKey = "Hz7VLPHt7ow-oY992rJi"
+        PXLClient.sharedClient.apiKey = "ccWQFNExi4gQjyNYpOEf"
         //        #warning Replace with your Secret Key if you are making POST requests.
-        PXLClient.sharedClient.secretKey = "secret"
+        PXLClient.sharedClient.secretKey = "b3b38f4322877060b2e4f390fd"
 
         // Get one photo example
-        _ = PXLClient.sharedClient.getPhotoWithPhotoAlbumId(photoAlbumId: "299469263") { newPhoto, error in
+        _ = PXLClient.sharedClient.getPhotoWithPhotoAlbumId(photoAlbumId: "354400866") { newPhoto, error in
             guard error == nil else {
                 print("Error during load of image with Id \(String(describing: error))")
                 return
@@ -29,13 +29,13 @@ class ViewController: UIViewController {
                 print("cannot find photo")
                 return
             }
-            print("New Photo: \(photo)")
-            PXLAnalyitcsService.sharedAnalyitcs.logEvent(event: PXLAnalyticsEventOpenedLightBox(photo: photo)) { error in
+            print("New Photo: \(photo.albumPhotoId)")
+            _ = PXLAnalyitcsService.sharedAnalyitcs.logEvent(event: PXLAnalyticsEventOpenedLightBox(photo: photo)) { error in
                 if let error = error {
                     print("🛑 Error during analyitcs call:\(error)")
                 }
             }
-            PXLAnalyitcsService.sharedAnalyitcs.logEvent(event: PXLAnalyticsEventActionClicked(photo: photo, actionLink: "Linkecske")) { (error) in
+            _ = PXLAnalyitcsService.sharedAnalyitcs.logEvent(event: PXLAnalyticsEventActionClicked(photo: photo, actionLink: "Linkecske")) { (error) in
                 if let error = error {
                     print("🛑 Error during analyitcs call:\(error)")
                 }

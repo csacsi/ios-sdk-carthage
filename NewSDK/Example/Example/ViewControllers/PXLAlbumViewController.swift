@@ -48,7 +48,7 @@ class PXLAlbumViewController: UIViewController {
                 self.collectionView.reloadData()
             }
 
-            viewModel.openedWidget("widgetke")
+            viewModel.openedWidget("my new widget")
         }
     }
 

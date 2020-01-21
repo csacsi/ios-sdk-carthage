@@ -12,22 +12,22 @@ import Foundation
 
 struct PXLProductDTO: Codable {
     let id, productAlbumPhotoID, photoID, albumID: Int
-    let linkText: String
+    let linkText: String?
     let link: String
     let image: String
     let imageThumb, imageThumbSquare: String
     let title, sku, productDescription: String
-    let price: Double
-    let stock: Int
+    let price: Double?
+    let stock: Int?
     let currency: String?
     let category: [Int]?
     let extraUrls: JSONAny?
-    let customCtaPhoto: String
+    let customCtaPhoto: String?
     let linkValid: Bool?
     let totalReviews, averageRating, datcOverride: JSONNull?
     let reviewsInfo: PXLReviewsInfo
     let productRegionLinks: [PXLProductRegionLink]
-    let productTaggedAt: Int
+    let productTaggedAt: Int?
 
     enum CodingKeys: String, CodingKey {
         case id
