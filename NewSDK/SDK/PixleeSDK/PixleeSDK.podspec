@@ -49,5 +49,5 @@ Pod::Spec.new do |spec|
 
     # spec.public_header_files = 'Pod/Classes/**/*.h'
     # spec.frameworks = 'UIKit', 'MapKit'
-     spec.dependency 'Alamofire', '~> 5.0'
+     spec.dependency 'Alamofire', '~> 5.0.0-rc.3'
 end
