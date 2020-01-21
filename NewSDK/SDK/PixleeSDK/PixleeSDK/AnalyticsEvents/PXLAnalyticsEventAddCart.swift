@@ -8,15 +8,15 @@
 
 import UIKit
 
-struct PXLAnalyticsEventAddCart: PXLAnalyticsEvent {
+public struct PXLAnalyticsEventAddCart: PXLAnalyticsEvent {
     let sku: String
     let quantity: Int
     let price: String
     let currency: String?
 
-    var eventName = "addToCart"
+    public var eventName = "addToCart"
 
-    var logParameters: [String: Any] {
+    public var logParameters: [String: Any] {
         let udid = UIDevice.current.identifierForVendor?.uuidString ?? "Unknown udid"
 
         var parameters: [String: Any] = ["product_sku": sku,

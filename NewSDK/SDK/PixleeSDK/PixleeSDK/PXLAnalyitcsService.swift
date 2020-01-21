@@ -9,7 +9,7 @@
 import Alamofire
 import Foundation
 
-class PXLAnalyitcsService {
+public class PXLAnalyitcsService {
     static var sharedAnalyitcs = PXLAnalyitcsService()
 
     private var client: PXLClient
@@ -24,6 +24,6 @@ class PXLAnalyitcsService {
     }
 }
 
-struct PXLAnalyitcsError: Error {
+public struct PXLAnalyitcsError: Error {
     let reason: String
 }

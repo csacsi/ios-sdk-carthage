@@ -8,7 +8,7 @@
 
 import Foundation
 
-class PXLPhotoConverter {
+public class PXLPhotoConverter {
     let productConverter: PXLProductConverter
 
     init(productConverter: PXLProductConverter) {

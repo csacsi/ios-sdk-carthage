@@ -8,7 +8,7 @@
 
 import Foundation
 
-class PXLProductConverter {
+public class PXLProductConverter {
     func convertProductDTOtoProduct(dto: PXLProductDTO) ->
         PXLProduct {
         return PXLProduct(identifier: dto.id,

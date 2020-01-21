@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct PXLPhotoResponseDTO: Codable {
+public struct PXLPhotoResponseDTO: Codable {
     let data: PXLPhotoDTO
     let status: String
 
@@ -17,7 +17,7 @@ struct PXLPhotoResponseDTO: Codable {
     }
 }
 
-struct PXLPhotoDTO: Codable {
+public struct PXLPhotoDTO: Codable {
     let id: Int
     let photoTitle: String?
     let latitude, longitude: Double?
@@ -158,7 +158,7 @@ struct PXLPhotoDTO: Codable {
 
 // MARK: - PXLUploaderAdditionalInfos
 
-struct PXLUploaderAdditionalFields: Codable {
+public struct PXLUploaderAdditionalFields: Codable {
     let height: String?
     let submissions: Int?
     let name: String?
@@ -166,7 +166,7 @@ struct PXLUploaderAdditionalFields: Codable {
 
 // MARK: - PixleeCDNPhotos
 
-struct PixleeCDNPhotos: Codable {
+public struct PixleeCDNPhotos: Codable {
     let smallURL, mediumURL, largeURL, originalURL: String
     let squareMediumURL, attributedMediumURL: String
 

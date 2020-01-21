@@ -9,7 +9,7 @@
 import Alamofire
 import Foundation
 
-class PXLClient {
+public class PXLClient {
     static var sharedClient = PXLClient()
 
     private let apiRequests = PXLApiRequests()

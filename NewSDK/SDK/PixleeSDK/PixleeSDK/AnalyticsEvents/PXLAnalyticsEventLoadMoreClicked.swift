@@ -8,12 +8,12 @@
 
 import UIKit
 
-struct PXLAnalyticsEventLoadMoreClicked: PXLAnalyticsEvent {
+public struct PXLAnalyticsEventLoadMoreClicked: PXLAnalyticsEvent {
     let album: PXLAlbum
 
-    var eventName = "loadMore"
+    public var eventName = "loadMore"
 
-    var logParameters: [String: Any] {
+    public var logParameters: [String: Any] {
         let udid = UIDevice.current.identifierForVendor?.uuidString ?? "Unknown udid"
 
         var parameters: [String: Any] = [

@@ -8,13 +8,13 @@
 
 import UIKit
 
-struct PXLAnalyticsEventActionClicked: PXLAnalyticsEvent {
+public struct PXLAnalyticsEventActionClicked: PXLAnalyticsEvent {
     let photo: PXLPhoto
     let actionLink: String
 
-    var eventName = "actionClicked"
+    public var eventName = "actionClicked"
 
-    var logParameters: [String: Any] {
+    public var logParameters: [String: Any] {
         let udid = UIDevice.current.identifierForVendor?.uuidString ?? "Unknown udid"
 
         let parameters: [String: Any] = [

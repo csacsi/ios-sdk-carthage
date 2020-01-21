@@ -9,7 +9,7 @@
 import Alamofire
 import Foundation
 
-class PXLAlbum {
+public class PXLAlbum {
     static let PXLAlbumDefaultPerPage: Int = 20
 
     let identifier: String?

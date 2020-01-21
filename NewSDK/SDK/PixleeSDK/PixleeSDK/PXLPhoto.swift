@@ -10,13 +10,13 @@ import Alamofire
 import Foundation
 import MapKit
 
-enum PXLPhotoSize {
+public enum PXLPhotoSize {
     case thumbnail
     case medium
     case big
 }
 
-struct PXLPhoto {
+public struct PXLPhoto {
     let id: Int
     let photoTitle: String?
     let latitude: Double?

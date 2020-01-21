@@ -11,10 +11,9 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
+    - Nuke
   https://github.com/csacsi/ios-sdk-carthage.git:
     - PixleeSDK
-  trunk:
-    - Nuke
 
 SPEC CHECKSUMS:
   Alamofire: ca8c0de6906873be89d6deec5c8de279e00bf872
