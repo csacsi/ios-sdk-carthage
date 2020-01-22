@@ -14,6 +14,11 @@ public struct PXLAnalyticsEventActionClicked: PXLAnalyticsEvent {
 
     public var eventName = "actionClicked"
 
+    public init(photo: PXLPhoto, actionLink: String) {
+        self.photo = photo
+        self.actionLink = actionLink
+    }
+
     public var logParameters: [String: Any] {
         let udid = UIDevice.current.identifierForVendor?.uuidString ?? "Unknown udid"
 

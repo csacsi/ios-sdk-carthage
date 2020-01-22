@@ -17,6 +17,14 @@ public struct PXLAnalyticsEventConvertedPhoto: PXLAnalyticsEvent {
 
     public var eventName = "conversion"
 
+    public init(cartContents: [Int], cartTotal: Int, cartTotalQuantity: Int, orderId: Int? = nil, currency: String? = nil) {
+        self.cartContents = cartContents
+        self.cartTotal = cartTotal
+        self.cartTotalQuantity = cartTotalQuantity
+        self.orderId = orderId
+        self.currency = currency
+    }
+
     public var logParameters: [String: Any] {
         let udid = UIDevice.current.identifierForVendor?.uuidString ?? "Unknown udid"
 

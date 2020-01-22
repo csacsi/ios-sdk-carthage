@@ -14,6 +14,11 @@ public struct PXLAnalyticsEventOpenedWidget: PXLAnalyticsEvent {
 
     public var eventName = "openedWidget"
 
+    public init(album: PXLAlbum, widget: String) {
+        self.album = album
+        self.widget = widget
+    }
+
     public var logParameters: [String: Any] {
         let udid = UIDevice.current.identifierForVendor?.uuidString ?? "Unknown udid"
 
@@ -30,7 +35,7 @@ public struct PXLAnalyticsEventOpenedWidget: PXLAnalyticsEvent {
         let photoIds = album.photos.compactMap({ (photo) -> String? in
             String(photo.albumPhotoId)
         })
-        
+
         parameters["photos"] = photoIds.joined(separator: ",")
 
         return parameters

@@ -10,7 +10,7 @@ import Foundation
 
 // MARK: - Product
 
-public struct PXLProductDTO: Codable {
+struct PXLProductDTO: Codable {
     let id, productAlbumPhotoID, photoID, albumID: Int
     let linkText: String?
     let link: String
@@ -55,7 +55,7 @@ public struct PXLProductDTO: Codable {
 
 // MARK: - ProductRegionLink
 
-public struct PXLProductRegionLink: Codable {
+struct PXLProductRegionLink: Codable {
     let url: String
     let regionName: String
     let regionIsDefault: Bool

@@ -9,75 +9,133 @@
 import Foundation
 
 public struct PXLAlbumFilterOptions: Codable {
-    let minInstagramFollowers: Int?
-    let minTwitterFollowers: Int?
-    let contentSource: [String]?
-    let contentType: [String]?
-    let inCategories: [Int]?
-    let filterBySubcaption: String?
-    let filterByUserhandle: [String: String]?
-    let submittedDateStart: Date?
-    let submittedDateEnd: Date?
-    let computerVision: [String: String]?
-    let filterByLocation: [String: String]?
-    let filterByRadius: String?
+    public let minInstagramFollowers: Int?
+    public let minTwitterFollowers: Int?
+    public let contentSource: [String]?
+    public let contentType: [String]?
+    public let inCategories: [Int]?
+    public let filterBySubcaption: String?
+    public let filterByUserhandle: [String: String]?
+    public let submittedDateStart: Date?
+    public let submittedDateEnd: Date?
+    public let computerVision: [String: String]?
+    public let filterByLocation: [String: String]?
+    public let filterByRadius: String?
 
-    var deniedPhotos: Bool = false {
+    public var deniedPhotos: Bool = false {
         didSet {
             flagDeniedPhotos = true
         }
     }
 
-    var starredPhotos: Bool = false {
+    public var starredPhotos: Bool = false {
         didSet {
             flagStarredPhotos = true
         }
     }
 
-    var deletedPhotos: Bool = false {
+    public var deletedPhotos: Bool = false {
         didSet {
             flagDeletedPhotos = true
         }
     }
 
-    var flaggedPhotos: Bool = false {
+    public var flaggedPhotos: Bool = false {
         didSet {
             flagFlaggedPhotos = true
         }
     }
 
-    var hasPermission: Bool = false {
+    public var hasPermission: Bool = false {
         didSet {
             flagHasPermission = true
         }
     }
 
-    var hasProduct: Bool = false {
+    public var hasProduct: Bool = false {
         didSet {
             flagHasPermission = true
         }
     }
 
-    var inStockOnly: Bool = false {
+    public var inStockOnly: Bool = false {
         didSet {
             flagInStockOnly = true
         }
     }
 
-    var hasActionLink: Bool = false {
+    public var hasActionLink: Bool = false {
         didSet {
             flagHasActionLink = true
         }
     }
 
-    var flagDeniedPhotos: Bool?
-    var flagStarredPhotos: Bool?
-    var flagDeletedPhotos: Bool?
-    var flagFlaggedPhotos: Bool?
-    var flagHasPermission: Bool?
-    var flagHasProduct: Bool?
-    var flagInStockOnly: Bool?
-    var flagHasActionLink: Bool?
+    public var flagDeniedPhotos: Bool?
+    public var flagStarredPhotos: Bool?
+    public var flagDeletedPhotos: Bool?
+    public var flagFlaggedPhotos: Bool?
+    public var flagHasPermission: Bool?
+    public var flagHasProduct: Bool?
+    public var flagInStockOnly: Bool?
+    public var flagHasActionLink: Bool?
+
+    public init(minInstagramFollowers: Int? = nil,
+                minTwitterFollowers: Int? = nil,
+                contentSource: [String]? = nil,
+                contentType: [String]? = nil,
+                inCategories: [Int]? = nil,
+                filterBySubcaption: String? = nil,
+                filterByUserhandle: [String: String]? = nil,
+                submittedDateStart: Date? = nil,
+                submittedDateEnd: Date? = nil,
+                computerVision: [String: String]? = nil,
+                filterByLocation: [String: String]? = nil,
+                filterByRadius: String? = nil,
+                deniedPhotos: Bool = false,
+                starredPhotos: Bool = false,
+                deletedPhotos: Bool = false,
+                flaggedPhotos: Bool = false,
+                hasPermission: Bool = false,
+                hasProduct: Bool = false,
+                inStockOnly: Bool = false,
+                hasActionLink: Bool = false,
+                flagDeniedPhotos: Bool? = nil,
+                flagStarredPhotos: Bool? = nil,
+                flagDeletedPhotos: Bool? = nil,
+                flagFlaggedPhotos: Bool? = nil,
+                flagHasPermission: Bool? = nil,
+                flagHasProduct: Bool? = nil,
+                flagInStockOnly: Bool? = nil,
+                flagHasActionLink: Bool? = nil) {
+        self.minInstagramFollowers = minInstagramFollowers
+        self.minTwitterFollowers = minTwitterFollowers
+        self.contentSource = contentSource
+        self.contentType = contentType
+        self.inCategories = inCategories
+        self.filterBySubcaption = filterBySubcaption
+        self.filterByUserhandle = filterByUserhandle
+        self.submittedDateStart = submittedDateStart
+        self.submittedDateEnd = submittedDateEnd
+        self.computerVision = computerVision
+        self.filterByLocation = filterByLocation
+        self.filterByRadius = filterByRadius
+        self.deniedPhotos = deniedPhotos
+        self.starredPhotos = starredPhotos
+        self.deletedPhotos = deletedPhotos
+        self.flaggedPhotos = flaggedPhotos
+        self.hasPermission = hasPermission
+        self.hasProduct = hasProduct
+        self.inStockOnly = inStockOnly
+        self.hasActionLink = hasActionLink
+        self.flagDeniedPhotos = flagDeniedPhotos
+        self.flagStarredPhotos = flagStarredPhotos
+        self.flagDeletedPhotos = flagDeletedPhotos
+        self.flagFlaggedPhotos = flagFlaggedPhotos
+        self.flagHasPermission = flagHasPermission
+        self.flagHasProduct = flagHasProduct
+        self.flagInStockOnly = flagInStockOnly
+        self.flagHasActionLink = flagHasActionLink
+    }
 
     var urlParamString: String? {
         var options = [String: Any]()

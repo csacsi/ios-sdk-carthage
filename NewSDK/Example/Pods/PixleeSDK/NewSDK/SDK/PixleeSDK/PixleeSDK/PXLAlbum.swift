@@ -10,28 +10,28 @@ import Alamofire
 import Foundation
 
 public class PXLAlbum {
-    static let PXLAlbumDefaultPerPage: Int = 20
+    public static let PXLAlbumDefaultPerPage: Int = 20
 
-    let identifier: String?
-    let sku: Int?
+    public let identifier: String?
+    public let sku: Int?
 
-    var photos: [PXLPhoto]
-    var lastPageFetched: Int
-    var hasNextPage: Bool
+    public var photos: [PXLPhoto]
+    public var lastPageFetched: Int
+    public var hasNextPage: Bool
 
-    var perPage: Int {
+    public var perPage: Int {
         didSet {
             clearPhotosAndPages()
         }
     }
 
-    var sortOptions: PXLAlbumSortOptions? {
+    public var sortOptions: PXLAlbumSortOptions? {
         didSet {
             clearPhotosAndPages()
         }
     }
 
-    var filterOptions: PXLAlbumFilterOptions? {
+    public var filterOptions: PXLAlbumFilterOptions? {
         didSet {
             clearPhotosAndPages()
         }
@@ -43,7 +43,7 @@ public class PXLAlbum {
         hasNextPage = true
     }
 
-    init(identifier: String? = nil, sku: Int? = nil, perPage: Int = PXLAlbum.PXLAlbumDefaultPerPage, photos: [PXLPhoto] = [PXLPhoto](), lastPageFetched: Int = 0, hasNextPage: Bool = true, sortOptions: PXLAlbumSortOptions? = nil, filterOptions: PXLAlbumFilterOptions? = nil) {
+    public init(identifier: String? = nil, sku: Int? = nil, perPage: Int = PXLAlbum.PXLAlbumDefaultPerPage, photos: [PXLPhoto] = [PXLPhoto](), lastPageFetched: Int = 0, hasNextPage: Bool = true, sortOptions: PXLAlbumSortOptions? = nil, filterOptions: PXLAlbumFilterOptions? = nil) {
         self.identifier = identifier
         self.sku = sku
         self.perPage = perPage
@@ -54,7 +54,7 @@ public class PXLAlbum {
         self.filterOptions = filterOptions
     }
 
-    func changeIdentifier(newIdentifier: String) -> PXLAlbum {
+    public func changeIdentifier(newIdentifier: String) -> PXLAlbum {
         return PXLAlbum(identifier: newIdentifier,
                         sku: sku,
                         perPage: PXLAlbum.PXLAlbumDefaultPerPage,
@@ -65,7 +65,7 @@ public class PXLAlbum {
                         filterOptions: filterOptions)
     }
 
-    func changeSKU(newSKU: Int) -> PXLAlbum {
+    public func changeSKU(newSKU: Int) -> PXLAlbum {
         return PXLAlbum(identifier: identifier,
                         sku: newSKU,
                         perPage: PXLAlbum.PXLAlbumDefaultPerPage,
