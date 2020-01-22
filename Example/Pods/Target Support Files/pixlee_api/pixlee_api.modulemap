@@ -1,0 +1,6 @@
+framework module pixlee_api {
+  umbrella header "pixlee_api-umbrella.h"
+
+  export *
+  module * { export * }
+}

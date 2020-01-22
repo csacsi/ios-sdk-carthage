@@ -8,7 +8,7 @@
 
 import Nuke
 import UIKit
-import PixleeSDK
+import pixlee_api
 
 class ImageDetailsViewController: UIViewController {
 

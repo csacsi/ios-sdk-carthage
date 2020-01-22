@@ -7,8 +7,7 @@
 //
 
 import Foundation
-import PixleeSDK
-
+import pixlee_api
 struct PXLAlbumViewModel {
     var album: PXLAlbum
 

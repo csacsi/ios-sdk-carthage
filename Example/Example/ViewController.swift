@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import PixleeSDK
+import pixlee_api
 
 class ViewController: UIViewController {
     let album = PXLAlbum(identifier: "5984962")
