@@ -8,7 +8,7 @@ target 'Example' do
 
   # Pods for Example
   pod 'Nuke'
-  pod 'PixleeSDK', '2.0.0'
+  pod 'PixleeSDK', '2.0.2'
 
   target 'ExampleTests' do
     inherit! :search_paths

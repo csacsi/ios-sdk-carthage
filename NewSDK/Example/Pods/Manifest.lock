@@ -1,0 +1,25 @@
+PODS:
+  - Alamofire (5.0.0-rc.3)
+  - Nuke (8.4.0)
+  - PixleeSDK (2.0.0):
+    - Alamofire (~> 5.0.0-rc.3)
+
+DEPENDENCIES:
+  - Nuke
+  - PixleeSDK (= 2.0.0)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - Nuke
+  https://github.com/csacsi/ios-sdk-carthage:
+    - PixleeSDK
+
+SPEC CHECKSUMS:
+  Alamofire: ca8c0de6906873be89d6deec5c8de279e00bf872
+  Nuke: fa6f784c4f7e1c0f9313668510186c68b7af2509
+  PixleeSDK: e287c133ff99b897ef10ccb93e924c6105c3df4e
+
+PODFILE CHECKSUM: 870c803802e479485703ce73775e6855d9ba8f4e
+
+COCOAPODS: 1.8.4
