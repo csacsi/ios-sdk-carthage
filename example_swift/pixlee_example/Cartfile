@@ -1,4 +1,0 @@
-github "pixlee/ios-sdk-carthage" ~> 1.74.15
-github "SnapKit/Masonry" ~> 0.6.4
-github "rs/SDWebImage" ~> 3.8.2
-github "mattt/FormatterKit" ~> 1.8.2

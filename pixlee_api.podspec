@@ -2,41 +2,51 @@
 # Be sure to run `pod lib lint pixlee_api.podspec' to ensure this is a
 # valid spec before submitting.
 #
-# Any lines starting with a # are optional, but their use is encouraged
-# To learn more about a Podspec see https://guides.cocoapods.org/syntax/podspec.html
+#  To learn more about Podspec attributes see https://guides.cocoapods.org/syntax/podspec.html
+#  To see working Podspecs in the CocoaPods repo see https://github.com/CocoaPods/Specs/
 #
 
-Pod::Spec.new do |s|
-  s.name             = 'pixlee_api'
-  s.version          = '1.74.33'
-  s.summary          = 'An API Wrapper for Pixlee API'
+Pod::Spec.new do |spec|
 
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
+  # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
+  #
+  #  These will help people to find your library, and whilst it
+  #  can feel like a chore to fill in it's definitely to your advantage. The
+  #  summary should be tweet-length, and the description more in depth.
+  #
 
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
+  spec.name         = "pixlee_api"
+  spec.version      = "2.0.0"
+  spec.summary      = "An API Wrapper for Pixlee API"
 
-  s.homepage         = 'https://github.com/pixlee/ios-sdk-carthage'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'pixlee-accounts' => 'rachidi29@gmail.com' }
-  s.source           = { :git => 'https://github.com/pixlee/ios-sdk-carthage.git', :tag => s.version.to_s}
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  # This description is used to generate tags and improve search results.
+  #   * Think: What does it do? Why did you write it? What is the focus?
+  #   * Try to keep it short, snappy and to the point.
+  #   * Write the description between the DESC delimiters below.
+  #   * Finally, don't worry about the indent, CocoaPods strips it!
+  # This description is used to generate tags and improve search results.
+  #   * Think: What does it do? Why did you write it? What is the focus?
+  #   * Try to keep it short, snappy and to the point.
+  #   * Write the description between the DESC delimiters below.
+  #   * Finally, don't worry about the indent, CocoaPods strips it!
 
-  s.ios.deployment_target = '8.0'
+    spec.description      = <<-DESC
+  TODO: Add long description of the pod here.
+                         DESC
 
-  s.source_files = 'pixlee_sdk/**/*'
-  
-  # s.resource_bundles = {
-  #   'pixlee_api' => ['pixlee_api/Assets/*.png']
-  # }
+    spec.homepage         = 'https://github.com/csacsi/ios-sdk-carthage'
+    # spec.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+    spec.license          = { :type => 'MIT', :file => 'NewSDK/SDK/PixleeSDK/LICENSE' }
+    spec.author           = { 'pixlee-accounts' => 'rachidi29@gmail.com' }
+    spec.source           = { :git => 'https://github.com/csacsi/ios-sdk-carthage.git', :tag => spec.version.to_s}
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-   s.dependency 'AFNetworking', '~> 3.2'
+    spec.ios.deployment_target = '12.0'
+
+    spec.source_files = 'pixlee_api/**/*{swift}'
+    
+    spec.resources = "pixlee_api/**/*.{png,jpeg,jpg,storyboard,xib,xcassets}"
+
+    # spec.public_header_files = 'Pod/Classes/**/*.h'
+    # spec.frameworks = 'UIKit', 'MapKit'
+     spec.dependency 'Alamofire', '~> 5.0.0-rc.3'
 end
