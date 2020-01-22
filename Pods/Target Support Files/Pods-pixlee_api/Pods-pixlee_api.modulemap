@@ -1,6 +1,0 @@
-framework module Pods_pixlee_api {
-  umbrella header "Pods-pixlee_api-umbrella.h"
-
-  export *
-  module * { export * }
-}

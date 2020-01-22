@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_pixlee_apiVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_pixlee_apiVersionString[];
+FOUNDATION_EXPORT double Pods_PixleeSDKVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_PixleeSDKVersionString[];
 

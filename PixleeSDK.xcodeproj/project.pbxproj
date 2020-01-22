@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2E200729D46373C81B1C7CE7 /* Pods_pixlee_api.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9293601C860594601950741A /* Pods_pixlee_api.framework */; };
+		004290F1516B5898890992DD /* Pods_PixleeSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BB455E980071AEFEB35C84B /* Pods_PixleeSDK.framework */; };
 		F2E30E6223D784CC00CDD977 /* PXLProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E30E4923D784CB00CDD977 /* PXLProduct.swift */; };
 		F2E30E6323D784CC00CDD977 /* PXLClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E30E4A23D784CB00CDD977 /* PXLClient.swift */; };
 		F2E30E6423D784CC00CDD977 /* PXLAnalyitcsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E30E4B23D784CB00CDD977 /* PXLAnalyitcsService.swift */; };
@@ -47,9 +47,9 @@
 		0A21451E15E4F385A6783E3E /* Pods-PixleeSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PixleeSDK.debug.xcconfig"; path = "Target Support Files/Pods-PixleeSDK/Pods-PixleeSDK.debug.xcconfig"; sourceTree = "<group>"; };
 		4730E0D15642FCDC2294B57B /* Pods-pixlee_api.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pixlee_api.release.xcconfig"; path = "Target Support Files/Pods-pixlee_api/Pods-pixlee_api.release.xcconfig"; sourceTree = "<group>"; };
 		64C46AFE6CF2C42EF69BE6EB /* Pods-PixleeSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PixleeSDK.release.xcconfig"; path = "Target Support Files/Pods-PixleeSDK/Pods-PixleeSDK.release.xcconfig"; sourceTree = "<group>"; };
-		9293601C860594601950741A /* Pods_pixlee_api.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pixlee_api.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6BB455E980071AEFEB35C84B /* Pods_PixleeSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PixleeSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		98432CCF3EB41D27278B2BD6 /* Pods-pixlee_api.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pixlee_api.debug.xcconfig"; path = "Target Support Files/Pods-pixlee_api/Pods-pixlee_api.debug.xcconfig"; sourceTree = "<group>"; };
-		F2E30E3F23D7841900CDD977 /* libpixlee_api.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libpixlee_api.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2E30E3F23D7841900CDD977 /* libPixleeSDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPixleeSDK.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2E30E4923D784CB00CDD977 /* PXLProduct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PXLProduct.swift; sourceTree = "<group>"; };
 		F2E30E4A23D784CB00CDD977 /* PXLClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PXLClient.swift; sourceTree = "<group>"; };
 		F2E30E4B23D784CB00CDD977 /* PXLAnalyitcsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PXLAnalyitcsService.swift; sourceTree = "<group>"; };
@@ -79,7 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E200729D46373C81B1C7CE7 /* Pods_pixlee_api.framework in Frameworks */,
+				004290F1516B5898890992DD /* Pods_PixleeSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,7 +89,7 @@
 		932064CFF5264AB2BF810B18 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9293601C860594601950741A /* Pods_pixlee_api.framework */,
+				6BB455E980071AEFEB35C84B /* Pods_PixleeSDK.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -108,7 +108,7 @@
 		F2E30E3623D7841900CDD977 = {
 			isa = PBXGroup;
 			children = (
-				F2E30E4123D7841900CDD977 /* pixlee_api */,
+				F2E30E4123D7841900CDD977 /* Classes */,
 				F2E30E4023D7841900CDD977 /* Products */,
 				D7C58796B20A2C53F14DD197 /* Pods */,
 				932064CFF5264AB2BF810B18 /* Frameworks */,
@@ -118,12 +118,12 @@
 		F2E30E4023D7841900CDD977 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F2E30E3F23D7841900CDD977 /* libpixlee_api.a */,
+				F2E30E3F23D7841900CDD977 /* libPixleeSDK.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F2E30E4123D7841900CDD977 /* pixlee_api */ = {
+		F2E30E4123D7841900CDD977 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
 				F2E30E4E23D784CB00CDD977 /* AnalyticsEvents */,
@@ -140,7 +140,7 @@
 				F2E30E4923D784CB00CDD977 /* PXLProduct.swift */,
 				F2E30E7723D7853300CDD977 /* Resources */,
 			);
-			path = pixlee_api;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		F2E30E4C23D784CB00CDD977 /* Helpers */ = {
@@ -195,9 +195,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F2E30E3E23D7841900CDD977 /* pixlee_api */ = {
+		F2E30E3E23D7841900CDD977 /* PixleeSDK */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F2E30E4623D7841900CDD977 /* Build configuration list for PBXNativeTarget "pixlee_api" */;
+			buildConfigurationList = F2E30E4623D7841900CDD977 /* Build configuration list for PBXNativeTarget "PixleeSDK" */;
 			buildPhases = (
 				88C5F816DF547415B41B3DAD /* [CP] Check Pods Manifest.lock */,
 				F2E30E3B23D7841900CDD977 /* Sources */,
@@ -208,9 +208,9 @@
 			);
 			dependencies = (
 			);
-			name = pixlee_api;
+			name = PixleeSDK;
 			productName = PixleeSDK;
-			productReference = F2E30E3F23D7841900CDD977 /* libpixlee_api.a */;
+			productReference = F2E30E3F23D7841900CDD977 /* libPixleeSDK.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -228,7 +228,7 @@
 					};
 				};
 			};
-			buildConfigurationList = F2E30E3A23D7841900CDD977 /* Build configuration list for PBXProject "pixlee_api" */;
+			buildConfigurationList = F2E30E3A23D7841900CDD977 /* Build configuration list for PBXProject "PixleeSDK" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -241,7 +241,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F2E30E3E23D7841900CDD977 /* pixlee_api */,
+				F2E30E3E23D7841900CDD977 /* PixleeSDK */,
 			);
 		};
 /* End PBXProject section */
@@ -262,7 +262,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-pixlee_api-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-PixleeSDK-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -421,7 +421,7 @@
 		};
 		F2E30E4723D7841900CDD977 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 98432CCF3EB41D27278B2BD6 /* Pods-pixlee_api.debug.xcconfig */;
+			baseConfigurationReference = 0A21451E15E4F385A6783E3E /* Pods-PixleeSDK.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6HRLMQGMGT;
@@ -438,7 +438,7 @@
 		};
 		F2E30E4823D7841900CDD977 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4730E0D15642FCDC2294B57B /* Pods-pixlee_api.release.xcconfig */;
+			baseConfigurationReference = 64C46AFE6CF2C42EF69BE6EB /* Pods-PixleeSDK.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6HRLMQGMGT;
@@ -456,7 +456,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F2E30E3A23D7841900CDD977 /* Build configuration list for PBXProject "pixlee_api" */ = {
+		F2E30E3A23D7841900CDD977 /* Build configuration list for PBXProject "PixleeSDK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F2E30E4423D7841900CDD977 /* Debug */,
@@ -465,7 +465,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F2E30E4623D7841900CDD977 /* Build configuration list for PBXNativeTarget "pixlee_api" */ = {
+		F2E30E4623D7841900CDD977 /* Build configuration list for PBXNativeTarget "PixleeSDK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F2E30E4723D7841900CDD977 /* Debug */,

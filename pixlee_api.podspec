@@ -42,9 +42,9 @@ Pod::Spec.new do |spec|
 
     spec.ios.deployment_target = '12.0'
 
-    spec.source_files = 'pixlee_api/**/*{swift}'
+    spec.source_files = 'Classes/**/*{swift}'
     
-    spec.resources = "pixlee_api/**/*.{png,jpeg,jpg,storyboard,xib,xcassets}"
+    spec.resources = "Classes/**/*.{png,jpeg,jpg,storyboard,xib,xcassets}"
 
     # spec.public_header_files = 'Pod/Classes/**/*.h'
     # spec.frameworks = 'UIKit', 'MapKit'
