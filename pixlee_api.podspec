@@ -36,7 +36,7 @@ Pod::Spec.new do |spec|
 
     spec.homepage         = 'https://github.com/csacsi/ios-sdk-carthage'
     # spec.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
-    spec.license          = { :type => 'MIT', :file => 'NewSDK/SDK/PixleeSDK/LICENSE' }
+    spec.license          = { :type => 'MIT', :file => 'LICENSE' }
     spec.author           = { 'pixlee-accounts' => 'rachidi29@gmail.com' }
     spec.source           = { :git => 'https://github.com/csacsi/ios-sdk-carthage.git', :tag => spec.version.to_s}
 
