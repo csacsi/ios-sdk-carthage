@@ -9,11 +9,11 @@
 import Foundation
 
 public struct PXLProduct {
-    let identifier: Int
-    let linkText: String?
-    let link: URL?
-    let imageUrl: URL?
-    let title: String
-    let sku: String
-    let productDescription: String
+    public let identifier: Int
+    public let linkText: String?
+    public let link: URL?
+    public let imageUrl: URL?
+    public let title: String
+    public let sku: String
+    public let productDescription: String
 }

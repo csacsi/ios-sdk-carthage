@@ -105,19 +105,20 @@ public struct PXLPhoto {
     }
 
     public var sourceIconImage: UIImage? {
+        let bundle = Bundle(for: PXLAlbum.self)
         switch source {
         case "instagram":
-            return UIImage(named: "instagram", in: Bundle(identifier: "Pixlee.pixlee-sdk"), with: nil)
+            return UIImage(named: "instagram", in: bundle, compatibleWith: nil)
         case "facebook":
-            return UIImage(named: "facebook", in: Bundle(identifier: "Pixlee.pixlee-sdk"), with: nil)
+            return UIImage(named: "facebook", in: bundle, compatibleWith: nil)
         case "pinterest":
-            return UIImage(named: "pinterest", in: Bundle(identifier: "Pixlee.pixlee-sdk"), with: nil)
+            return UIImage(named: "pinterest", in: bundle, compatibleWith: nil)
         case "tumblr":
-            return UIImage(named: "tumblr", in: Bundle(identifier: "Pixlee.pixlee-sdk"), with: nil)
+            return UIImage(named: "tumblr", in: bundle, compatibleWith: nil)
         case "twitter":
-            return UIImage(named: "twitter", in: Bundle(identifier: "Pixlee.pixlee-sdk"), with: nil)
+            return UIImage(named: "twitter", in: bundle, compatibleWith: nil)
         case "vine":
-            return UIImage(named: "vine", in: Bundle(identifier: "Pixlee.pixlee-sdk"), with: nil)
+            return UIImage(named: "vine", in: bundle, compatibleWith: nil)
         default:
             return nil
         }
