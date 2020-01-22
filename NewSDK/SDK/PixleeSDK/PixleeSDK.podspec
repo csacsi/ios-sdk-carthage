@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "PixleeSDK"
-  spec.version      = "2.0.2"
+  spec.version      = "2.0.0"
   spec.summary      = "An API Wrapper for Pixlee API"
 
   # This description is used to generate tags and improve search results.
@@ -38,7 +38,8 @@ Pod::Spec.new do |spec|
     # spec.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
     spec.license          = { :type => 'MIT', :file => 'NewSDK/SDK/PixleeSDK/LICENSE' }
     spec.author           = { 'pixlee-accounts' => 'rachidi29@gmail.com' }
-    spec.source           = { :git => 'https://github.com/csacsi/ios-sdk-carthage.git', :tag => spec.version.to_s}
+    #spec.source           = { :git => 'https://github.com/csacsi/ios-sdk-carthage.git', :tag => spec.version.to_s}
+    spec.source           = { :git => 'https://github.com/csacsi/ios-sdk-carthage.git'}
     # spec.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
     spec.ios.deployment_target = '13.0'
